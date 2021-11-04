@@ -16,14 +16,9 @@ const Login=()=>{
             </div>
             <div>
                 <Select
-                    showSearch
                     style={{border:"1px solid #BEBEBE",borderRadius:"30px"}}
                     defaultValue={"Arabic"}
                     className="login-select"
-                    optionFilterProp="children"
-                    filterOption={(input, option) =>
-                    option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                    }
                 >
                     <Option value="Arabic" style={{textAlign:"center"}}>
                         <img style={{width:"30px",position:"absolute",left:"2px"}} src={iraqImage} alt="Arabic" />
