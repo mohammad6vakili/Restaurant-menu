@@ -1,0 +1,42 @@
+.login {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.login > div:nth-child(1) {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login > div:nth-child(1) > img {
+  width: 50% !important;
+  max-width: 300px;
+}
+.login > div:nth-child(2) {
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.login-select {
+  width: 65%;
+  max-width: 320px;
+  text-align: center !important;
+  color: white !important;
+  font-size: 18px !important;
+    /* padding-top: 5px !important; */
+  margin-bottom: 15px !important;
+}
+.login-select span{
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}

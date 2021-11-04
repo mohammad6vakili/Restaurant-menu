@@ -2,9 +2,33 @@
   font-family: Almarai;
   src: url(/src/assets/font/Almarai-Regular.ttf);
 }
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Almarai;
+}
+.App {
+  width: 100%;
+  height: 100vh;
+  background-image: url(/src/assets/images/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.ant-select-selector {
+  width: 100% !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 30px !important;
+  height: 45px !important;
+  text-align: center !important;
+}
+.ant-select-arrow {
+  color: white !important;
+  font-size: 18px !important;
+  top: 45% !important;
+  right: 20px !important;
+}
+.ant-select-selection-search-input{
+  text-align: center !important;
 }
