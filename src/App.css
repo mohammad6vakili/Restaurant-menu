@@ -26,9 +26,13 @@
 .ant-select-arrow {
   color: white !important;
   font-size: 18px !important;
-  top: 45% !important;
+  top: 50% !important;
   right: 20px !important;
 }
 .ant-select-selection-search-input{
   text-align: center !important;
+}
+.ant-btn:hover, .ant-btn:focus {
+  color: rgb(62, 48, 151) !important;
+  border-color: rgb(62, 48, 151) !important;
 }
