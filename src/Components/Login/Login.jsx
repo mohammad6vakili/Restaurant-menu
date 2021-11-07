@@ -34,22 +34,16 @@ const Login=()=>{
                     </Option>
                 </Select>
                 <Select
-                    showSearch
-                    defaultValue={"Erbil"}
                     style={{border:"1px solid #BEBEBE",borderRadius:"30px"}}
+                    defaultValue={"Arabic"}
                     className="login-select"
-                    optionFilterProp="children"
-                    // onChange={onChange}
-                    filterOption={(input, option) =>
-                    option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                    }
                 >
                     <Option value="Erbil">Erbil</Option>
                     <Option value="Basra">Basra</Option>
                     <Option value="Najaf">Najaf</Option>
                 </Select>
                 <Button 
-                    onClick={()=>history.push("/home")}
+                    onClick={()=>history.push("/category")}
                     className="login-button"
                 >
                     Enter Menu

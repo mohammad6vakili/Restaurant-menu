@@ -6,7 +6,9 @@ import {Provider} from "react-redux";
 import thunk from "redux-thunk";
 import {createStore, combineReducers, applyMiddleware} from "redux";
 import {BrowserRouter} from "react-router-dom";
-import Reducer from "./Store/Reducer"
+import Reducer from "./Store/Reducer";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 
 const rootReducer=combineReducers({
