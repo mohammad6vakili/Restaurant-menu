@@ -11,9 +11,9 @@
 .App {
   width: 100%;
   min-height: 100vh;
-  background-image: url(/src/assets/images/background.png);
-  background-repeat: no-repeat;
+  background-image: url(./assets/images/background.png);
   background-size: cover;
+  background-repeat: no-repeat;
 }
 .ant-select-selector {
   width: 100% !important;
@@ -29,10 +29,11 @@
   top: 50% !important;
   right: 20px !important;
 }
-.ant-select-selection-search-input{
+.ant-select-selection-search-input {
   text-align: center !important;
 }
-.ant-btn:hover, .ant-btn:focus {
+.ant-btn:hover,
+.ant-btn:focus {
   color: rgb(62, 48, 151) !important;
   border-color: rgb(62, 48, 151) !important;
 }

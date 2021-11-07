@@ -1,0 +1,17 @@
+.foods {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  padding: 50px 10px 0 10px;
+}
+.foods-logo {
+  width: 100px;
+}
+.foods-title{
+    color: white;
+    font-size: 36px;
+    margin-top: 20px;
+}
