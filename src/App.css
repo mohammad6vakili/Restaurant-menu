@@ -14,6 +14,28 @@
   background-image: url(./assets/images/background.png);
   background-size: cover;
   background-repeat: no-repeat;
+  position:relative;
+}
+.cart-icon{
+  position: absolute;
+  top: 25px;
+  cursor: pointer;
+  right: 20px;
+  z-index: 1;
+}
+.cart-icon>div{
+  position:absolute;
+  background-color: red;
+  right: -10px;
+  top: -10px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:white;
+  font-weight: 700;
 }
 .ant-select-selector {
   width: 100% !important;
@@ -36,4 +58,23 @@
 .ant-btn:focus {
   color: rgb(62, 48, 151) !important;
   border-color: rgb(62, 48, 151) !important;
+}
+.ReactModal__Content,.ReactModal__Content--after-open{
+  right: 0 !important;
+  top: 0 !important;
+  width: 300px !important;
+  z-index: 12222222;
+  height: 100vh !important;
+  border-radius: 0 !important;
+  inset: unset !important;
+}
+.ReactModal__Overlay,.ReactModal__Overlay--after-open{
+  display: flex !important;
+  justify-content: flex-end !important;
+  background-color: rgba(0, 0, 0, 0.555)  !important;
+}
+.cart-body{
+  width: 100%;
+  height: 100%;
+  background-color: white;
 }

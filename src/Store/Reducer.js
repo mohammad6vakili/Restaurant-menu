@@ -1,11 +1,13 @@
 import {
 FOODS_DATA,
-FOOD_DATA
+FOOD_DATA,
+CART
 } from "./Action";
   
   const initialState = {
     foodsData:null,
-    foodData:null
+    foodData:null,
+    cart:false
   };
   
   const Reducer = (state = initialState, action) => {
@@ -14,6 +16,8 @@ FOOD_DATA
         return {...state , foodsData: action.payload};
       case FOOD_DATA:
         return {...state , foodData: action.payload};
+      case CART:
+        return {...state , cart: action.payload};
       default:
         return state;
     }

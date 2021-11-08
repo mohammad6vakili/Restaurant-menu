@@ -1,0 +1,155 @@
+.food {
+  color: white;
+  padding: 100px 10px 0 10px;
+}
+.food-first-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 32px;
+}
+.food-first-row > div {
+  width: 300px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.food-first-row > div:nth-child(1) {
+  background-color: rgba(255, 255, 255, 0.164);
+  border-radius: 30px;
+}
+.food-second-row {
+  width: 100%;
+  display: flex;
+  direction: rtl;
+  justify-content: space-around;
+  margin-top: 40px;
+  font-size: 24px;
+}
+.food-second-row > div {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.food-second-row > div:nth-child(1) {
+  min-width: 590px !important;
+}
+.food-third-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+.food-third-row > div:nth-child(1) {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.food-third-row > div:nth-child(1) > img {
+  width: 50%;
+}
+.food-third-row > div:nth-child(2) {
+  width: 50%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.ant-radio-wrapper {
+  margin-right: 100px !important;
+  color: white !important;
+  font-size: 24px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+.ant-radio-group {
+  color: white !important;
+  display: flex !important;
+  flex-direction: column !important;
+  direction: rtl !important;
+}
+.ant-radio-input {
+  border: 4px solid white !important;
+}
+.ant-radio-checked {
+  border-color: unset !important;
+}
+.ant-radio-inner::after {
+  display: none !important;
+}
+.ant-radio-checked {
+  background-color: white !important;
+  border-radius: 30px !important;
+}
+.ant-radio-inner {
+  width: 40px !important;
+  height: 25px !important;
+  display: flex !important;
+  justify-content: center !important;
+  border-radius: 30px !important;
+  background-color: transparent !important;
+}
+.food-fourth-row {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.food-fourth-row>button{
+    width: 300px !important;
+    height: 50px !important;
+    color: white;
+    border-radius: 30px !important;
+    border: 3px solid white !important;
+    background-color: transparent !important;
+    font-size: 20px;
+}
+.food-fourth-row>button:hover{
+    background-color: white !important;
+    border: none !important;
+    color: black !important;
+}
+/* ------------------------------------------------------ */
+@media only screen and (max-width: 1000px) {
+  .food-second-row > div {
+    width: unset;
+  }
+  .food-second-row > div:nth-child(1) {
+    width: 100% !important;
+    align-items: center;
+  }
+  .food-third-row > div:nth-child(1) {
+    width: 70%;
+  }
+  .food-third-row > div:nth-child(1) > img {
+    width: 80%;
+  }
+  .food-third-row > div:nth-child(2) {
+    width: 30%;
+  }
+  .ant-radio-wrapper {
+    margin-right: 120px !important;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .food-first-row {
+    font-size: 24px;
+  }
+  .food-second-row {
+    font-size: 16px;
+  }
+  .food-third-row {
+    margin-top: 50px;
+    flex-direction: column;
+  }
+  .food-third-row > div {
+    width: 100% !important;
+  }
+  .ant-radio-wrapper {
+    margin: 0 !important;
+  }
+}
