@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import "./Category.css";
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
@@ -15,6 +15,10 @@ import sandwichImage from "../../assets/images/sandwich-hamon-black-background-s
 const Category=()=>{
     const dispatch=useDispatch();
     const history=useHistory();
+
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+    },[])
 
     const data=[
         {

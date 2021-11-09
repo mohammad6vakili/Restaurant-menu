@@ -2,6 +2,7 @@ import React from 'react';
 import "./Login.css";
 import Logo from "../../assets/images/logo.png";
 import iraqImage from "../../assets/images/Iraq.png";
+import kurdistanImage from "../../assets/images/kurdistan.png";
 import usImage from "../../assets/images/us.png";
 import { useHistory } from 'react-router';
 import { Button, Select } from 'antd';
@@ -29,7 +30,7 @@ const Login=()=>{
                         <span>English</span>
                     </Option>
                     <Option value="Kurdish" style={{textAlign:"center"}}>
-                        <img style={{width:"30px",position:"absolute",left:"2px"}} src={iraqImage} alt="Arabic" />
+                        <img style={{width:"30px",position:"absolute",left:"2px"}} src={kurdistanImage} alt="Arabic" />
                         <span>Kurdish</span>
                     </Option>
                 </Select>

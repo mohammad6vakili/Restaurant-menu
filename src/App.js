@@ -19,6 +19,7 @@ import whatsapp from "./assets/images/whatsapp.png";
 const App=()=>{
   const location=useLocation();
   const dispatch=useDispatch();
+  const [address , setAddress]=useState("");
   const foodsData=useSelector(state=>state.Reducer.foodsData);
   const foodData=useSelector(state=>state.Reducer.foodData);
   const cartData=useSelector(state=>state.Reducer.cartData);
@@ -51,12 +52,14 @@ const App=()=>{
       })
   }
   const decrease=(data)=>{
-    setHello(!hello);
-    cartData.map((d)=>{
-      if(d.id===data.id){
-        return d.count==d.count--;
-      }
-    })
+    if(data.count>0){
+      setHello(!hello);
+      cartData.map((d)=>{
+        if(d.id===data.id){
+          return d.count==d.count--;
+        }
+      })  
+    }
   }
 
   useEffect(()=>{
@@ -93,7 +96,7 @@ const App=()=>{
             {cartData && cartData.map((data)=>(
               <div className="cart-item">
                 <div>
-                  <div>{data.fName}</div>
+                  <div>{data.fName} - {data.size}</div>
                   <div>
                     <div style={{display:"flex",alignItems:"center"}}>
                       <img onClick={()=>remove(data)} src={xImage} alt="operation" />
@@ -115,14 +118,23 @@ const App=()=>{
               المجموع : {cartData.reduce((a, c) => a + c.price * c.count, 0).toLocaleString()}
             </div>
             <Input
+              type="tel"
               className="cart-input"
               placeholder="رقم الهاتف" 
             />
             <Input
+              type="text"
+              value={address}
+              onChange={(e)=>setAddress(e.target.value)}
               className="cart-input"
               placeholder="العنوان" 
             />
-            <Button className="cart-button">
+            <Button 
+              disabled={address.length===0}
+              style={address==="" ? {opacity:".5"} : {opacity:"1"}} 
+              className="cart-button"
+              onClick={()=>console.log(address)}
+            >
               <img src={whatsapp} alt="call" />
               <span>اطلب عبر واتس اٍب</span>
             </Button>

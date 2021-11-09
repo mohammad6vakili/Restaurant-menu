@@ -8,11 +8,11 @@
   padding: 50px 10px 0 10px;
 }
 .foods-logo {
-  width: 100px;
+  width: 80px;
 }
 .foods-title {
   color: white;
-  font-size: 36px;
+  font-size: 28px;
   margin-top: 20px;
 }
 .foods-items {
@@ -90,22 +90,30 @@
     padding: 10px; 
   }
   .foods-item{
+    width:70%;
+    height: 50vh;
     height: unset;
-    padding:0 0 20px 0;
+    padding:0;
+    min-width: 300px !important;
     flex-direction: column;
   }
   .foods-item>img{
     width: 100%;
-    margin-bottom: 30px;
+    height: 250px;
+    margin-bottom:15px;
   }
   .foods-item-info{
     width: 100%;
     display: flex;
   }
   .foods-item-info>div{
-    margin: 10px 0;
+    margin: 5px 0;
     justify-content: center !important;
     align-items: center !important;
+    font-size: 12px !important;
+  }
+  .foods-item-info>div:nth-child(1){
+    font-size: 16px !important;
   }
   .foods-item-info>div:nth-child(2)>span {
     margin: 5px 0;

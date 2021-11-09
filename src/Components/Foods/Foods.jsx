@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import "./Foods.css";
 import { useHistory } from 'react-router';
 import {setFoodData} from "../../Store/Action";
@@ -8,13 +8,20 @@ import Logo from "../../assets/images/logo.png";
 
 
 const Foods=()=>{
+    
     const dispatch=useDispatch();
     const history=useHistory();
     const foodsData=useSelector(state=>state.Reducer.foodsData);
+    
     const goToFood=(data)=>{
         dispatch(setFoodData(data));
         history.push("/food");
     }
+
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+    },[])
+
     return(
         <div className="foods">
             <img 

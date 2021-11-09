@@ -15,12 +15,13 @@
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
+  overflow: hidden;
 }
 .cart-icon {
   position: fixed;
   top: 25px;
   cursor: pointer;
-  right: 10px;
+  right: 10px !important;
   z-index: 1;
 }
 .cart-icon > div {
@@ -193,4 +194,7 @@
 .cart-button > img {
   width: 30px;
   margin-left: 15px;
+}
+@media only screen and (max-width:450px) {
+  
 }

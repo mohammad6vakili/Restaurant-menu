@@ -135,6 +135,20 @@
     margin-right: 120px !important;
   }
 }
+@media only screen and (max-width: 850px) {
+  .food-first-row {
+    font-size: 26px;
+  }
+  .food-second-row {
+    font-size: 18px;
+  }
+  .food-third-row {
+    margin-top: 50px;
+  } 
+  .ant-radio-wrapper {
+    font-size: 18px !important;
+  }
+}
 @media only screen and (max-width: 600px) {
   .food-first-row {
     font-size: 24px;
@@ -143,7 +157,6 @@
     font-size: 16px;
   }
   .food-third-row {
-    margin-top: 50px;
     flex-direction: column;
   }
   .food-third-row > div {
