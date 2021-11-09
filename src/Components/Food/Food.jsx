@@ -2,20 +2,32 @@ import React, { useEffect } from 'react';
 import "./Food.css";
 import sliderBackBtn from "../../assets/images/63-631354_drop-down-menu-down-arrow-html-hd-png copy 2.png";
 import { useHistory } from 'react-router';
-import { useSelector } from 'react-redux';
+import {setCartData} from "../../Store/Action";
+import { useSelector , useDispatch} from 'react-redux';
 import { Radio , Button} from 'antd';
 import foodImage from "../../assets/images/Layer 4.png";
 
 
 const Food=()=>{
+    
+    const dispatch=useDispatch();
     const history=useHistory();
     const foodData=useSelector(state=>state.Reducer.foodData);
+    const cartData=useSelector(state=>state.Reducer.cartData);
+
+    
     useEffect(()=>{
         if(foodData===null){
             history.push("/category");
         }
         console.log(foodData);
     },[])
+
+    const addToCart=()=>{
+        foodData.count=foodData.count+1;
+        cartData.push(foodData);
+    }
+    
     return(
         <div className="food">
             <img 
@@ -50,7 +62,7 @@ const Food=()=>{
                 </div>
             </div>
             <div className="food-fourth-row">
-                <Button>
+                <Button onClick={addToCart}>
                     اًضف اٍلی الطلب
                 </Button>
             </div>

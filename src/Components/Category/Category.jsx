@@ -22,11 +22,11 @@ const Category=()=>{
             name:"بیتزا",
             src:pizzaImage,
             foods:[
-                {id:11,src:pizzaImage,price:"11000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:12,src:pizzaImage,price:"14000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:13,src:pizzaImage,price:"22000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:14,src:pizzaImage,price:"10500",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:15,src:pizzaImage,price:"37000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"}
+                {id:11,src:pizzaImage,price:"11000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:12,src:pizzaImage,price:"14000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:13,src:pizzaImage,price:"22000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:14,src:pizzaImage,price:"10500",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:15,src:pizzaImage,price:"37000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"}
             ]
         },
         {
@@ -34,11 +34,11 @@ const Category=()=>{
             name:"برغر",
             src:burgerImage,
             foods:[
-                {id:21,src:burgerImage,price:"11000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:22,src:burgerImage,price:"14000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:23,src:burgerImage,price:"22000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:24,src:burgerImage,price:"10500",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:25,src:burgerImage,price:"37000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"}
+                {id:21,src:burgerImage,price:"11000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:22,src:burgerImage,price:"14000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:23,src:burgerImage,price:"22000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:24,src:burgerImage,price:"10500",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:25,src:burgerImage,price:"37000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"}
             ]
         },
         {
@@ -46,11 +46,11 @@ const Category=()=>{
             name:"مقبلات",
             src:sushiImage,
             foods:[
-                {id:31,src:sushiImage,price:"11000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:32,src:sushiImage,price:"14000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:33,src:sushiImage,price:"22000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:34,src:sushiImage,price:"10500",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:35,src:sushiImage,price:"37000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"}
+                {id:31,src:sushiImage,price:"11000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:32,src:sushiImage,price:"14000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:33,src:sushiImage,price:"22000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:34,src:sushiImage,price:"10500",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:35,src:sushiImage,price:"37000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"}
             ]
         },
         {
@@ -58,11 +58,11 @@ const Category=()=>{
             name:"سندویش",
             src:sandwichImage,
             foods:[
-                {id:41,src:sandwichImage,price:"11000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:42,src:sandwichImage,price:"14000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:43,src:sandwichImage,price:"22000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:44,src:sandwichImage,price:"10500",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:45,src:sandwichImage,price:"37000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"}
+                {id:41,src:sandwichImage,price:"11000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:42,src:sandwichImage,price:"14000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:43,src:sandwichImage,price:"22000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:44,src:sandwichImage,price:"10500",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:45,src:sandwichImage,price:"37000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"}
             ]
         },
         {
@@ -70,11 +70,11 @@ const Category=()=>{
             name:"بیتزا",
             src:pizzaImage,
             foods:[
-                {id:51,src:pizzaImage,price:"11000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:52,src:pizzaImage,price:"14000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:53,src:pizzaImage,price:"22000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:54,src:pizzaImage,price:"10500",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:55,src:pizzaImage,price:"37000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"}
+                {id:51,src:pizzaImage,price:"11000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:52,src:pizzaImage,price:"14000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:53,src:pizzaImage,price:"22000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:54,src:pizzaImage,price:"10500",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:55,src:pizzaImage,price:"37000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"}
             ]
         },
         {  
@@ -82,11 +82,11 @@ const Category=()=>{
             name:"برغر",
             src:burgerImage,
             foods:[
-                {id:61,src:burgerImage,price:"11000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:62,src:burgerImage,price:"14000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:63,src:burgerImage,price:"22000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:64,src:burgerImage,price:"10500",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:65,src:burgerImage,price:"37000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"}
+                {id:61,src:burgerImage,price:"11000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:62,src:burgerImage,price:"14000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:63,src:burgerImage,price:"22000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:64,src:burgerImage,price:"10500",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:65,src:burgerImage,price:"37000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"}
             ]
         },
         {
@@ -94,11 +94,11 @@ const Category=()=>{
             name:"مقبلات",
             src:sushiImage,
             foods:[
-                {id:71,src:sushiImage,price:"11000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:72,src:sushiImage,price:"14000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:73,src:sushiImage,price:"22000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:74,src:sushiImage,price:"10500",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:75,src:sushiImage,price:"37000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"}
+                {id:71,src:sushiImage,price:"11000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:72,src:sushiImage,price:"14000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:73,src:sushiImage,price:"22000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:74,src:sushiImage,price:"10500",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:75,src:sushiImage,price:"37000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"}
             ]
         },
         {
@@ -106,11 +106,11 @@ const Category=()=>{
             name:"سندویش",
             src:sandwichImage,
             foods:[
-                {id:81,src:sandwichImage,price:"11000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:82,src:sandwichImage,price:"14000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:83,src:sandwichImage,price:"22000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:84,src:sandwichImage,price:"10500",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:85,src:sandwichImage,price:"37000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"}
+                {id:81,src:sandwichImage,price:"11000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:82,src:sandwichImage,price:"14000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:83,src:sandwichImage,price:"22000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:84,src:sandwichImage,price:"10500",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:85,src:sandwichImage,price:"37000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"}
             ]
         },
         {
@@ -118,11 +118,11 @@ const Category=()=>{
             name:"بیتزا",
             src:pizzaImage,
             foods:[
-                {id:91,src:pizzaImage,price:"11000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:92,src:pizzaImage,price:"14000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:93,src:pizzaImage,price:"22000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:94,src:pizzaImage,price:"10500",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:95,src:pizzaImage,price:"37000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"}
+                {id:91,src:pizzaImage,price:"11000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:92,src:pizzaImage,price:"14000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:93,src:pizzaImage,price:"22000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:94,src:pizzaImage,price:"10500",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:95,src:pizzaImage,price:"37000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"}
             ]
         },
         {
@@ -130,11 +130,11 @@ const Category=()=>{
             name:"برغر",
             src:burgerImage,
             foods:[
-                {id:101,src:burgerImage,price:"11000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:102,src:burgerImage,price:"14000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:103,src:burgerImage,price:"22000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:104,src:burgerImage,price:"10500",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:105,src:burgerImage,price:"37000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"}
+                {id:101,src:burgerImage,price:"11000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:102,src:burgerImage,price:"14000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:103,src:burgerImage,price:"22000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:104,src:burgerImage,price:"10500",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:105,src:burgerImage,price:"37000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"}
             ]
         },
         {
@@ -142,11 +142,11 @@ const Category=()=>{
             name:"مقبلات",
             src:sushiImage,
             foods:[
-                {id:111,src:sushiImage,price:"11000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:112,src:sushiImage,price:"14000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:113,src:sushiImage,price:"22000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:114,src:sushiImage,price:"10500",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:115,src:sushiImage,price:"37000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"}
+                {id:111,src:sushiImage,price:"11000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:112,src:sushiImage,price:"14000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:113,src:sushiImage,price:"22000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:114,src:sushiImage,price:"10500",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:115,src:sushiImage,price:"37000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"}
             ]
         },
         {
@@ -154,11 +154,11 @@ const Category=()=>{
             name:"سندویش",
             src:sandwichImage,
             foods:[
-                {id:121,src:sandwichImage,price:"11000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:122,src:sandwichImage,price:"14000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:123,src:sandwichImage,price:"22000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:124,src:sandwichImage,price:"10500",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:125,src:sandwichImage,price:"37000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"}
+                {id:121,src:sandwichImage,price:"11000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:122,src:sandwichImage,price:"14000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:123,src:sandwichImage,price:"22000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:124,src:sandwichImage,price:"10500",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:125,src:sandwichImage,price:"37000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"}
             ]
         },
         {
@@ -166,11 +166,11 @@ const Category=()=>{
             name:"بیتزا",
             src:pizzaImage,
             foods:[
-                {id:131,src:pizzaImage,price:"11000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:132,src:pizzaImage,price:"14000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:133,src:pizzaImage,price:"22000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:134,src:pizzaImage,price:"10500",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:135,src:pizzaImage,price:"37000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"}
+                {id:131,src:pizzaImage,price:"11000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:132,src:pizzaImage,price:"14000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:133,src:pizzaImage,price:"22000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:134,src:pizzaImage,price:"10500",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:135,src:pizzaImage,price:"37000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"}
             ]
         },
         {
@@ -178,11 +178,11 @@ const Category=()=>{
             name:"برغر",
             src:burgerImage,
             foods:[
-                {id:141,src:burgerImage,price:"11000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:142,src:burgerImage,price:"14000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:143,src:burgerImage,price:"22000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:144,src:burgerImage,price:"10500",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:145,src:burgerImage,price:"37000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"}
+                {id:141,src:burgerImage,price:"11000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:142,src:burgerImage,price:"14000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:143,src:burgerImage,price:"22000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:144,src:burgerImage,price:"10500",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:145,src:burgerImage,price:"37000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"}
             ]
         },
         {
@@ -190,11 +190,11 @@ const Category=()=>{
             name:"مقبلات",
             src:sushiImage,
             foods:[
-                {id:151,src:sushiImage,price:"11000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:152,src:sushiImage,price:"14000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:153,src:sushiImage,price:"22000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:154,src:sushiImage,price:"10500",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:155,src:sushiImage,price:"37000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"}
+                {id:151,src:sushiImage,price:"11000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:152,src:sushiImage,price:"14000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:153,src:sushiImage,price:"22000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:154,src:sushiImage,price:"10500",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:155,src:sushiImage,price:"37000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"}
             ]
         },
         {
@@ -202,11 +202,11 @@ const Category=()=>{
             name:"سندویش",
             src:sandwichImage,
             foods:[
-                {id:161,src:sandwichImage,price:"11000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:162,src:sandwichImage,price:"14000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:163,src:sandwichImage,price:"22000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:164,src:sandwichImage,price:"10500",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
-                {id:165,src:sandwichImage,price:"37000",fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"}
+                {id:161,src:sandwichImage,price:"11000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:162,src:sandwichImage,price:"14000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:163,src:sandwichImage,price:"22000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:164,src:sandwichImage,price:"10500",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"},
+                {id:165,src:sandwichImage,price:"37000",count:0,fName:"بیتزا ببیرونی",desc:"جنبت موزاریلا-ببیرونی-زیتون-فلیفلت خضراء"}
             ]
         }
     ]

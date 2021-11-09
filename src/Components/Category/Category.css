@@ -18,10 +18,10 @@
   border: 1px solid rgba(255, 255, 255, 0.70);
 }
 .category-back-btn {
-  position: absolute;
+  position: fixed;
   top: 25px;
   border: none !important;
-  left: 20px;
+  left: 10px;
   width: 20px !important;
   height: 30px !important;
   cursor: pointer;
