@@ -8,6 +8,7 @@ import { Switch , Route , Redirect } from 'react-router-dom';
 import { useSelector , useDispatch} from 'react-redux';
 import { setCart, setCartData } from './Store/Action';
 import cartImage from "./assets/images/Group.svg";
+import { useLocation } from 'react-router';
 import Fade from "react-reveal";
 import { Button, Input, Modal } from 'antd';
 import xImage from "./assets/images/x.png";
@@ -16,7 +17,7 @@ import minesImage from "./assets/images/mines.png";
 import whatsapp from "./assets/images/whatsapp.png";
 
 const App=()=>{
-  
+  const location=useLocation();
   const dispatch=useDispatch();
   const foodsData=useSelector(state=>state.Reducer.foodsData);
   const foodData=useSelector(state=>state.Reducer.foodData);
@@ -69,7 +70,7 @@ const App=()=>{
   
   return (
     <div className="App">
-      {cart === false &&
+      {cart === false && location.pathname!=="/" &&
         <div onClick={cartHandler} className="cart-icon">
           <img src={cartImage} alt="cart" />
         </div>

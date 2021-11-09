@@ -72,10 +72,11 @@
   top: 0 !important;
   display: flex !important;
   margin: 0 !important;
+  max-width: 100% !important;
   justify-content: flex-end !important;
 }
 .ant-modal-content {
-  width: 400px !important;
+  width: 450px !important;
   height: 100vh;
 }
 .ant-modal-close {
@@ -172,6 +173,7 @@
   margin-top: 15px !important;
   padding: 7px 10px !important;
   text-align: right !important;
+  color: white !important;
 }
 .cart-button {
   width: 100% !important;
