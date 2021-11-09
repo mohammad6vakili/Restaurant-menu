@@ -34,9 +34,6 @@ const Food=()=>{
         if(foodData===null){
             history.push("/category");
         }
-        if(foodData){
-            foodData.size="متوسط";
-        }
         window.scrollTo(0, 0);
     },[])
 
@@ -65,14 +62,13 @@ const Food=()=>{
                     <span>{foodData && foodData.desc}</span>
                     <span>{foodData && foodData.desc}</span>
                 </div>
-                <div></div>
             </div>
             <div className="food-third-row">
                 <div>
                     <img src={foodImage} alt="food" />
                 </div>
                 <div>
-                    <Radio.Group onChange={(e)=>foodData.size=e.target.value} defaultValue={size}>
+                    <Radio.Group onChange={(e)=>foodData.size=e.target.value} defaultValue={foodData && foodData.size}>
                         <Radio value="صغیر">صغیر</Radio>
                         <Radio value="متوسط">متوسط</Radio>
                         <Radio value="کبیر">کبیر</Radio>

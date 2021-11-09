@@ -17,11 +17,17 @@
 }
 .foods-items {
   width: 100%;
+  height: 68vh;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
   padding: 10px 30px;
+  scrollbar-width: none;
+}
+.foods-items::-webkit-scrollbar{
+  display: none !important;
 }
 .foods-item {
   width: 100%;
@@ -36,6 +42,7 @@
 }
 .foods-item > img {
   border-radius: 30px;
+  height: 100%;
 }
 .foods-item-info {
   width: 60%;

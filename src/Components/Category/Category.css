@@ -15,7 +15,7 @@
 .slider-wrapper img {
   height: 550px;
   border-radius: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.70);
+  border: 1px solid rgba(255, 255, 255, 0.7);
 }
 .category-back-btn {
   position: fixed;
@@ -39,7 +39,7 @@
   height: 260px;
   cursor: pointer;
   border-radius: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.70);
+  border: 1px solid rgba(255, 255, 255, 0.7);
   position: relative;
   margin: 0 5px 20px 5px;
 }
@@ -63,7 +63,7 @@
   border-radius: 30px;
 }
 /* --------------------------------------------------------------- */
-@media only screen and (max-width:1150px){
+@media only screen and (max-width: 1150px) {
   .category-item {
     height: 220px;
   }
@@ -72,7 +72,7 @@
   .slider-wrapper img {
     height: 450px;
   }
-  .category-items{
+  .category-items {
     padding: 10px 5px;
     justify-content: center;
   }
@@ -90,8 +90,8 @@
     left: 0;
     border-radius: 30px 30px 50px 50px;
     font-size: 16px;
-    bottom: 1.7px;
-}
+    bottom: 0.5px;
+  }
   .category-item {
     height: 160px !important;
   }
@@ -104,7 +104,7 @@
     top: 25px;
     left: 10px;
   }
-  .cart-icon{
+  .cart-icon {
     right: 25px !important;
   }
   .category-item {
@@ -118,6 +118,13 @@
   .category-item {
     width: 160px !important;
     height: 140px !important;
+  }
+  .category-item > div {
+    width: 99%;
+    left: 0.5px;
+    border-radius: 30px 30px 50px 50px;
+    font-size: 16px;
+    bottom: 0.5px;
   }
 }
 @media only screen and (max-width: 420px) {
@@ -137,7 +144,7 @@
     width: 15px !important;
     height: 20px !important;
   }
-  .cart-icon{
+  .cart-icon {
     top: 7px;
     right: 10px;
     width: 25px !important;
@@ -149,10 +156,11 @@
     height: 180px;
   }
   .category-item > div {
-    width: 97%;
-    left: 1.5%;
+    width: 98%;
+    left: 1.25px;
+    border-radius: 30px 30px 50px 50px;
     font-size: 16px;
-    bottom: 1.7px;
+    bottom: .5px;
 }
 }
 @media only screen and (max-width: 360px) {
@@ -170,9 +178,10 @@
     height: 17px !important;
   }
   .category-item > div {
-    width: 100%;
-    left: 0;
+    width: 99%;
+    left: 0.5px;
+    border-radius: 30px 30px 50px 50px;
     font-size: 16px;
-    bottom: 1.7px;
-}  
+    bottom: .5px;
+}
 }

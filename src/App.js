@@ -52,13 +52,15 @@ const App=()=>{
       })
   }
   const decrease=(data)=>{
-    if(data.count>0){
+    if(data.count>1){
       setHello(!hello);
       cartData.map((d)=>{
         if(d.id===data.id){
           return d.count==d.count--;
         }
       })  
+    }else if(data.count===1){
+      remove(data);
     }
   }
 

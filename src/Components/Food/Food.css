@@ -5,9 +5,13 @@
 .food-first-row {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  padding: 0 20px;
+  justify-content: space-between;
   align-items: center;
   font-size: 32px;
+}
+.food-first-row > div:nth-child(2) {
+  justify-content: flex-end;
 }
 .food-first-row > div {
   width: 300px;
@@ -24,15 +28,16 @@
   width: 100%;
   display: flex;
   direction: rtl;
-  justify-content: space-around;
+  justify-content: flex-start;
   margin-top: 40px;
   font-size: 24px;
 }
 .food-second-row > div {
-  width: 400px;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
+  padding:0 20px;
 }
 .food-second-row > div:nth-child(1) {
   min-width: 590px !important;
@@ -93,34 +98,35 @@
   background-color: transparent !important;
 }
 .food-fourth-row {
-    width: 100%;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.food-fourth-row>button{
-    width: 300px !important;
-    height: 50px !important;
-    color: white;
-    border-radius: 30px !important;
-    border: 3px solid white !important;
-    background-color: transparent !important;
-    font-size: 20px;
+.food-fourth-row > button {
+  width: 300px !important;
+  height: 50px !important;
+  color: white;
+  border-radius: 30px !important;
+  border: 3px solid white !important;
+  background-color: transparent !important;
+  font-size: 20px;
 }
-.food-fourth-row>button:hover{
-    background-color: white !important;
-    border: none !important;
-    color: black !important;
+.food-fourth-row > button:hover {
+  background-color: white !important;
+  border: none !important;
+  color: black !important;
+}
+.ant-btn:hover,
+.ant-btn:focus {
+  color: white !important;
+  border-color: white !important;
 }
 /* ------------------------------------------------------ */
 @media only screen and (max-width: 1000px) {
   .food-second-row > div {
     width: unset;
-  }
-  .food-second-row > div:nth-child(1) {
-    width: 100% !important;
-    align-items: center;
   }
   .food-third-row > div:nth-child(1) {
     width: 70%;
@@ -142,9 +148,9 @@
   .food-second-row {
     font-size: 18px;
   }
-  .food-third-row {
+  .food-third-row { 
     margin-top: 50px;
-  } 
+  }
   .ant-radio-wrapper {
     font-size: 18px !important;
   }
