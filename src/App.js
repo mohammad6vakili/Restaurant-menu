@@ -42,6 +42,7 @@ const App=()=>{
     dispatch(setCartData(
       cartData.filter((cd)=>cd.id!==data.id)
     ))
+    data.count=0;
   }
   const increase=(data)=>{
       setHello(!hello);
@@ -52,7 +53,7 @@ const App=()=>{
       })
   }
   const decrease=(data)=>{
-    if(data.count>1){
+    if(data.count && data.count>1){
       setHello(!hello);
       cartData.map((d)=>{
         if(d.id===data.id){
@@ -60,6 +61,7 @@ const App=()=>{
         }
       })  
     }else if(data.count===1){
+      data.count=0;
       remove(data);
     }
   }
@@ -98,20 +100,20 @@ const App=()=>{
             {cartData && cartData.map((data)=>(
               <div className="cart-item">
                 <div>
-                  <div>{data.fName} - {data.size}</div>
+                  <div>{data.name.en} - {data.size}</div>
                   <div>
                     <div style={{display:"flex",alignItems:"center"}}>
                       <img onClick={()=>remove(data)} src={xImage} alt="operation" />
                       <img onClick={()=>increase(data)} src={plusImage} alt="operation" />
                       <img onClick={()=>decrease(data)} src={minesImage} alt="operation" />
                     </div>
-                    <span style={{fontSize:"16px"}}>{parseInt(foodData.price).toLocaleString()} * {foodData.count}</span>
+                    <span style={{fontSize:"16px"}}>{parseInt(data.price).toLocaleString()} * {data.count}</span>
                   </div>
                 </div>
                 <div>
                   <img 
-                    style={{width:"100%",borderRadius:"30px 0 0 30px",height:"100%"}} 
-                    src={data.src} 
+                    style={{width:"100%",borderRadius:"20px 0 0 20px",height:"100%"}} 
+                    src={data.icon} 
                   />
                 </div>
               </div>
@@ -147,7 +149,7 @@ const App=()=>{
         <Route path="/" exact component={Login}/>
         <Route path="/category" component={Category}/>
         <Route path="/food" component={Food}/>
-        {foodsData !==null ? <Route path="/foods" component={Foods}/> : <Redirect to="/category"/>}
+        <Route path="/foods" component={Foods}/>
       </Switch>
     </div>
   );

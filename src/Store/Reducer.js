@@ -3,6 +3,9 @@ FOODS_DATA,
 FOOD_DATA,
 CART,
 CART_DATA,
+RES,
+CAT,
+FOODS
 } from "./Action";
   
   const initialState = {
@@ -10,6 +13,9 @@ CART_DATA,
     foodData:null,
     cart:false,
     cartData:[],
+    res:null,
+    cat:null,
+    foods:null
   };
   
   const Reducer = (state = initialState, action) => {
@@ -22,6 +28,12 @@ CART_DATA,
         return {...state , cart: action.payload};
       case CART_DATA:
         return {...state , cartData: action.payload};
+      case RES:
+        return {...state , res: action.payload};
+      case CAT:
+        return {...state , cat: action.payload};
+      case FOODS:
+        return {...state , foods: action.payload};
       default:
         return state;
     }
