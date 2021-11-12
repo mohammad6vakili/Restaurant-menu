@@ -18,9 +18,8 @@ const Food=()=>{
     const cartData=useSelector(state=>state.Reducer.cartData);
     const cart=useSelector(state=>state.Reducer.cart);
     const [data , setData]=useState(null);
+    const [inSize , setInSize]=useState(null);
     const [hello , setHello]=useState(true);
-    const [size , setSize]=useState("متوسط");
-    const counter=useSelector(state=>state.Reducer.counter);
 
     const getFood=async()=>{
         try{
@@ -37,14 +36,20 @@ const Food=()=>{
     const cartHandler=()=>{
       if(cart===true){
         dispatch(setCart(false));
+        setInSize(null);
       }else{
         dispatch(setCart(true));
-        dispatch(setCartData(
-          cartData && cartData.filter((v,i,a)=>a.findIndex(t=>(t.id === v.id))===i)
-        ))
+        // dispatch(setCartData(
+        //   cartData && cartData.filter((v,i,a)=>a.findIndex(t=>(t.id === v.id))===i)
+        // ))
       }
     }
-    
+
+    const changeRadio=(e)=>{
+        setInSize(e.target.value);
+    }
+
+
     useEffect(()=>{
         if(foods===null){
             history.push("/foods");
@@ -54,14 +59,38 @@ const Food=()=>{
         window.scrollTo(0, 0);
     },[])
 
+
     const addToCart=()=>{
-        if(data.count){
-            data.count=data.count+1;
-        }else{
-            data.count=1
+        console.log(inSize);
+        data.size=inSize;
+        let alreadyExists=false;
+        cartData.map((x) => {
+            if (x.size === inSize) {
+              alreadyExists = true;
+              x.count++;
+            }
+        });
+        if(!data.size){
+            data.size=null;  
         }
-        cartData.push(data);
-        cartHandler();
+        if(cartData.length===0){
+            data.count=1
+            cartData.push(data);
+            cartHandler();
+            history.push("/foods")
+            console.log("cartData.length===0");
+        }else if(cartData.length>0){
+            if(!alreadyExists){
+                console.log("alreadyExist===false");
+                data.count=1
+                history.push("foods");
+                cartData.push(data);
+                cartHandler();
+            }else{
+                cartHandler();
+                console.log("alreadyExist===true");
+            }
+        }
     }
     
     return(
@@ -88,10 +117,12 @@ const Food=()=>{
                         <img src={data.icon} alt="food" />
                     </div>
                     <div>
-                        <Radio.Group onChange={(e)=>data.size=e.target.value}>
-                            <Radio value="صغیر">صغیر</Radio>
-                            <Radio value="متوسط">متوسط</Radio>
-                            <Radio value="کبیر">کبیر</Radio>
+                        <Radio.Group onChange={(e)=>changeRadio(e)}>
+                            {data.extras && data.extras.length!==0 &&
+                                data.extras.map((ex)=>(
+                                    <Radio value={ex.id}>{ex.name.en}</Radio>
+                                ))
+                            }
                         </Radio.Group>
                     </div>
                 </div>

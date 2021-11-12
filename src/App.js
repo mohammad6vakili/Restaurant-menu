@@ -32,9 +32,9 @@ const App=()=>{
       dispatch(setCart(false));
     }else{
       dispatch(setCart(true));
-      dispatch(setCartData(
-        cartData && cartData.filter((v,i,a)=>a.findIndex(t=>(t.id === v.id))===i)
-      ))
+      // dispatch(setCartData(
+      //   cartData && cartData.filter((v,i,a)=>a.findIndex(t=>(t.id === v.id))===i)
+      // ))
     }
   }
   
@@ -94,26 +94,30 @@ const App=()=>{
       >
         <div className="cart-main">
           <div className="cart-title">
-            <span>اطلب</span>
+            <span onClick={()=>console.log(cartData)}>اطلب</span>
           </div>
           <div className="cart-items">
-            {cartData && cartData.map((data)=>(
+            {cartData && cartData.map((cd)=>(
               <div className="cart-item">
                 <div>
-                  <div>{data.name.en} - {data.size}</div>
+                  <div>{cd.name.en} {cd.extras.map((ex)=>{
+                    if(ex.id===cd.size){
+                      return " - " + ex.name.en
+                    }
+                  })}</div>
                   <div>
                     <div style={{display:"flex",alignItems:"center"}}>
-                      <img onClick={()=>remove(data)} src={xImage} alt="operation" />
-                      <img onClick={()=>increase(data)} src={plusImage} alt="operation" />
-                      <img onClick={()=>decrease(data)} src={minesImage} alt="operation" />
+                      <img onClick={()=>remove(cd)} src={xImage} alt="operation" />
+                      <img onClick={()=>increase(cd)} src={plusImage} alt="operation" />
+                      <img onClick={()=>decrease(cd)} src={minesImage} alt="operation" />
                     </div>
-                    <span style={{fontSize:"16px"}}>{parseInt(data.price).toLocaleString()} * {data.count}</span>
+                    <span style={{fontSize:"16px"}}>{parseInt(cd.price).toLocaleString()} * {cd.count}</span>
                   </div>
                 </div>
                 <div>
                   <img 
                     style={{width:"100%",borderRadius:"20px 0 0 20px",height:"100%"}} 
-                    src={data.icon} 
+                    src={cd.icon} 
                   />
                 </div>
               </div>
