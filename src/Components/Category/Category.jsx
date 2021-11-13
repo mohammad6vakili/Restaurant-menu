@@ -23,7 +23,7 @@ const Category=()=>{
 
     const getCat=async()=>{
         try{
-            const response=await axios.post("http://admin.btob-restaurant.com/api/v3/categories",
+            const response=await axios.post("https://admin.btob-restaurant.com/api/v3/categories",
                 {
                     restaurant:res
                 }
@@ -37,7 +37,7 @@ const Category=()=>{
 
     const getSliders=async()=>{
         try{
-            const response=await axios.post("http://admin.btob-restaurant.com/api/v3/sliders",{
+            const response=await axios.post("https://admin.btob-restaurant.com/api/v3/sliders",{
                 restaurant:res
             });
             setSlider(response.data);

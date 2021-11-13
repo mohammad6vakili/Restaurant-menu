@@ -23,7 +23,7 @@ const Food=()=>{
 
     const getFood=async()=>{
         try{
-            const response = await axios.post("http://admin.btob-restaurant.com/api/v3/food",{
+            const response = await axios.post("https://admin.btob-restaurant.com/api/v3/food",{
                 food:foods
             });
             setData(response.data);

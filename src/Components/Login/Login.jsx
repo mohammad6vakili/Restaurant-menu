@@ -23,7 +23,7 @@ const Login=()=>{
     const getRes=async()=>{
         setLoading(true);
         try{
-            const response=await axios.get("http://admin.btob-restaurant.com/api/v3/restaurants");
+            const response=await axios.get("https://admin.btob-restaurant.com/api/v3/restaurants");
             setResData(response.data);
             setLoading(false);
         }catch(err){

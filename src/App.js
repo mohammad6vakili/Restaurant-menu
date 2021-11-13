@@ -78,7 +78,7 @@ const App=()=>{
       }
     })
     try{
-      const response=await axios.post("http://admin.btob-restaurant.com/api/v3/submit_order",postData);
+      const response=await axios.post("https://admin.btob-restaurant.com/api/v3/submit_order",postData);
       if(response.status===200){        
         message.success(response.data.message);
         dispatch(setCart(false));

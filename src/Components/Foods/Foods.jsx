@@ -18,7 +18,7 @@ const Foods=()=>{
     
     const getFoods=async()=>{
         try{
-            const response=await axios.post("http://admin.btob-restaurant.com/api/v3/foods",{
+            const response=await axios.post("https://admin.btob-restaurant.com/api/v3/foods",{
                 restaurant:res,
                 category:cat
             });
