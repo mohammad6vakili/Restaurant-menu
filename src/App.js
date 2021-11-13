@@ -5,12 +5,13 @@ import Category from './Components/Category/Category';
 import Foods from "./Components/Foods/Foods";
 import Food from "./Components/Food/Food";
 import { Switch , Route , Redirect } from 'react-router-dom';
+import axios from 'axios';
 import { useSelector , useDispatch} from 'react-redux';
 import { setCart, setCartData } from './Store/Action';
 import cartImage from "./assets/images/Group.svg";
-import { useLocation } from 'react-router';
+import { useLocation,useHistory } from 'react-router';
 import Fade from "react-reveal";
-import { Button, Input, Modal } from 'antd';
+import { Button, Input, message, Modal } from 'antd';
 import xImage from "./assets/images/x.png";
 import plusImage from "./assets/images/plus.png";
 import minesImage from "./assets/images/mines.png";
@@ -18,23 +19,20 @@ import whatsapp from "./assets/images/whatsapp.png";
 
 const App=()=>{
   const location=useLocation();
+  const history=useHistory();
   const dispatch=useDispatch();
   const [address , setAddress]=useState("");
-  const foodsData=useSelector(state=>state.Reducer.foodsData);
-  const foodData=useSelector(state=>state.Reducer.foodData);
   const cartData=useSelector(state=>state.Reducer.cartData);
+  const res=useSelector(state=>state.Reducer.res);
   const cart=useSelector(state=>state.Reducer.cart);
   const [hello , setHello]=useState(true);
-  const counter=useSelector(state=>state.Reducer.counter);
+
   
   const cartHandler=()=>{
     if(cart===true){
       dispatch(setCart(false));
     }else{
       dispatch(setCart(true));
-      // dispatch(setCartData(
-      //   cartData && cartData.filter((v,i,a)=>a.findIndex(t=>(t.id === v.id))===i)
-      // ))
     }
   }
   
@@ -44,6 +42,7 @@ const App=()=>{
     ))
     data.count=0;
   }
+
   const increase=(data)=>{
       setHello(!hello);
       cartData.map((d)=>{
@@ -52,6 +51,7 @@ const App=()=>{
         }
       })
   }
+
   const decrease=(data)=>{
     if(data.count && data.count>1){
       setHello(!hello);
@@ -65,6 +65,31 @@ const App=()=>{
       remove(data);
     }
   }
+
+  const saveOrder=async()=>{
+    const postData={};
+    postData.restaurant=res;
+    postData.address=address;
+    postData.items=cartData.map((cd)=>{
+      if(cd.size===null){
+        return {id:cd.id,qty:cd.count,extrasSelected:null}
+      }else{
+        return {id:cd.id,qty:cd.count,extrasSelected:[{id:cd.size}]}
+      }
+    })
+    try{
+      const response=await axios.post("http://admin.btob-restaurant.com/api/v3/submit_order",postData);
+      if(response.status===200){        
+        message.success(response.data.message);
+        dispatch(setCart(false));
+        window.location.replace(response.data.paymentLink);
+      }
+    }catch(err){
+      console.log(err);
+      message.error("Failed");
+    }
+  }
+  
 
   useEffect(()=>{
     dispatch(setCartData(cartData));
@@ -141,7 +166,7 @@ const App=()=>{
               disabled={address.length===0}
               style={address==="" ? {opacity:".5"} : {opacity:"1"}} 
               className="cart-button"
-              onClick={()=>console.log(address)}
+              onClick={saveOrder}
             >
               <img src={whatsapp} alt="call" />
               <span>اطلب عبر واتس اٍب</span>
