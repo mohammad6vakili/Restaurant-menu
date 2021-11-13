@@ -17,6 +17,7 @@ import { message, Spin } from 'antd';
 const Category=()=>{
     const dispatch=useDispatch();
     const history=useHistory();
+    const [slider , setSlider]=useState(null);
     const [catData , setCatData]=useState(null);
     const res=useSelector(state=>state.Reducer.res);
 
@@ -34,12 +35,25 @@ const Category=()=>{
         }
     }
 
+    const getSliders=async()=>{
+        try{
+            const response=await axios.post("http://admin.btob-restaurant.com/api/v3/sliders",{
+                restaurant:res
+            });
+            setSlider(response.data);
+        }catch(err){
+            console.log(err);
+            message.error("Failed");
+        }
+    }
+
     useEffect(()=>{
         window.scrollTo(0, 0);
         if(res===null){
             history.push("/");
         }else{
             getCat();
+            getSliders();
         }
     },[])
 
@@ -62,9 +76,13 @@ const Category=()=>{
         <div className="category">
             <div className="slider-wrapper">
                 <Slider {...bannerSettings}>
-                    <img src={sliderImage} alt="slider" />
-                    <img src={sliderImage} alt="slider" />
-                    <img src={sliderImage} alt="slider" />
+                {slider !==null ?
+                    slider.map((data)=>(
+                        <img src={data.imageShow} key={data.id} alt="slider" />
+                    ))
+                :
+                    <div></div>
+                }
                 </Slider>
                 <img 
                     onClick={()=>history.push("/")}
