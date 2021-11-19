@@ -23,6 +23,7 @@ const App=()=>{
   const dispatch=useDispatch();
   const [address , setAddress]=useState("");
   const cartData=useSelector(state=>state.Reducer.cartData);
+  const lang=useSelector(state=>state.Reducer.lang);
   const res=useSelector(state=>state.Reducer.res);
   const cart=useSelector(state=>state.Reducer.cart);
   const [hello , setHello]=useState(true);
@@ -108,7 +109,6 @@ const App=()=>{
         </div>
       }
       <Modal
-        title="لطفا کد ارسال شده را وارد کنید" 
         visible={cart}
         closable={true}
         className="cart-modal"
@@ -119,7 +119,13 @@ const App=()=>{
       >
         <div className="cart-main">
           <div className="cart-title">
-            <span onClick={()=>console.log(cartData)}>اطلب</span>
+            <span>
+              {lang==="ar" || lang==="ku"?
+              "اطلب"
+              :
+              "Order"
+              }
+            </span>
           </div>
           <div className="cart-items">
             {cartData && cartData.map((cd)=>(
@@ -148,19 +154,31 @@ const App=()=>{
               </div>
             ))}
             <div style={{marginTop:"25px",fontSize:"18px",textAlign:"right"}}>
-              المجموع : {cartData.reduce((a, c) => a + c.price * c.count, 0).toLocaleString()}
+              {lang==="ar" || lang==="ku"?
+              "المجموع"
+              :
+              "Total"
+              } : {cartData.reduce((a, c) => a + c.price * c.count, 0).toLocaleString()}
             </div>
             <Input
               type="tel"
               className="cart-input"
-              placeholder="رقم الهاتف" 
+              placeholder={lang==="ar" || lang==="ku"?
+              "رقم الهاتف"
+              :
+              "Telephone Number"
+              }
             />
             <Input
               type="text"
               value={address}
               onChange={(e)=>setAddress(e.target.value)}
               className="cart-input"
-              placeholder="العنوان" 
+              placeholder={lang==="ar" || lang==="ku"?
+              "العنوان"
+              :
+              "Address"
+              }
             />
             <Button 
               disabled={address.length===0}
@@ -169,7 +187,13 @@ const App=()=>{
               onClick={saveOrder}
             >
               <img src={whatsapp} alt="call" />
-              <span>اطلب عبر واتس اٍب</span>
+              <span>
+              {lang==="ar" || lang==="ku"?
+              "اطلب عبر واتس اٍب"
+              :
+              "Order via WhatsApp"
+              }
+              </span>
             </Button>
           </div>
         </div>

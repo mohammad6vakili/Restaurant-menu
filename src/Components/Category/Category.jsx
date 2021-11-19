@@ -20,6 +20,7 @@ const Category=()=>{
     const [slider , setSlider]=useState(null);
     const [catData , setCatData]=useState(null);
     const res=useSelector(state=>state.Reducer.res);
+    const lang=useSelector(state=>state.Reducer.lang);
 
     const getCat=async()=>{
         try{
@@ -96,7 +97,13 @@ const Category=()=>{
                     catData.map((data)=>(
                         <div key={data.id} onClick={()=>goToFood(data)} className="category-item">
                             <img src={data.imageShow} alt="food" />
-                            <div>{data.name.en}</div>
+                            <div>
+                                {lang==="ar" || lang==="ku" ?
+                                    data.name.ar
+                                :
+                                    data.name.en
+                                }
+                            </div>
                         </div>
                     ))
                 :

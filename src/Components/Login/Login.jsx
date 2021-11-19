@@ -4,7 +4,7 @@ import Logo from "../../assets/images/logo.png";
 import iraqImage from "../../assets/images/Iraq.png";
 import kurdistanImage from "../../assets/images/kurdistan.png";
 import { useDispatch } from 'react-redux';
-import {setRes} from "../../Store/Action";
+import {setRes,setLang} from "../../Store/Action";
 import usImage from "../../assets/images/us.png";
 import { useHistory } from 'react-router';
 import { Button, Select , Spin , message} from 'antd';
@@ -25,6 +25,7 @@ const Login=()=>{
         try{
             const response=await axios.get("https://admin.btob-restaurant.com/api/v3/restaurants");
             setResData(response.data);
+            dispatch(setRes(response.data[0].id))
             setLoading(false);
         }catch(err){
             console.log(err);
@@ -35,6 +36,7 @@ const Login=()=>{
 
     useEffect(()=>{
         getRes();
+        dispatch(setLang("ar"));
     },[])
 
     return(
@@ -46,17 +48,18 @@ const Login=()=>{
                 <Select
                     style={{border:"1px solid #BEBEBE",borderRadius:"30px"}}
                     defaultValue={"Arabic"}
+                    onChange={(value)=>dispatch(setLang(value))}
                     className="login-select"
                 >
-                    <Option value="Arabic" style={{textAlign:"center"}}>
+                    <Option value="ar" style={{textAlign:"center"}}>
                         <img style={{width:"30px",position:"absolute",left:"2px"}} src={iraqImage} alt="Arabic" />
                         <span>Arabic</span>
                     </Option>
-                    <Option value="English" style={{textAlign:"center"}}>
+                    <Option value="en" style={{textAlign:"center"}}>
                         <img style={{width:"30px",position:"absolute",left:"2px"}} src={usImage} alt="English" />
                         <span>English</span>
                     </Option>
-                    <Option value="Kurdish" style={{textAlign:"center"}}>
+                    <Option value="ku" style={{textAlign:"center"}}>
                         <img style={{width:"30px",position:"absolute",left:"2px"}} src={kurdistanImage} alt="Arabic" />
                         <span>Kurdish</span>
                     </Option>
@@ -65,6 +68,7 @@ const Login=()=>{
                 <Select
                         style={{border:"1px solid #BEBEBE",borderRadius:"30px"}}
                         placeholder="select restaurant"
+                        defaultValue={resData && resData[0].id}
                         onChange={(value)=>dispatch(setRes(value))}
                         className="login-select"
                 >

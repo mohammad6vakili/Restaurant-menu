@@ -5,6 +5,7 @@ export const CART_DATA="CART_DATA";
 export const RES="RES";
 export const CAT="CAT";
 export const FOODS="FOODS";
+export const LANG="LANG";
 
 
 export const setFoodsData=(data)=>{
@@ -59,6 +60,14 @@ export const setFoods=(data)=>{
     return(
         {
             type:FOODS,
+            payload:data
+        }
+    )
+}
+export const setLang=(data)=>{
+    return(
+        {
+            type:LANG,
             payload:data
         }
     )

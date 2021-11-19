@@ -14,6 +14,7 @@ const Foods=()=>{
     const history=useHistory();
     const cat=useSelector(state=>state.Reducer.cat);
     const res=useSelector(state=>state.Reducer.res);
+    const lang=useSelector(state=>state.Reducer.lang);
     const [foodsData , setFoodsData]=useState(null);
     
     const getFoods=async()=>{
@@ -56,26 +57,30 @@ const Foods=()=>{
                 src={Logo} 
                 alt="logo" 
             />
-            {/* {foodsData &&
-                <div className="foods-title">
-                    ipp
-                    {foodsData.name}
-                </div>
-            } */}
             <div className="foods-items">
                 {foodsData===null ? <Spin style={{position:"absolute",left:"49%",top:"49%"}} size="large" />
                 :
                     foodsData.map((data)=>(
                         data.name &&
                             <div className="foods-item" onClick={()=>goToFood(data)}>
-                                {data.icon && <img src={data.icon} alt="food"/>}
+                                <div className="foods-item-img">
+                                    {data.icon && <img src={data.icon} alt="food"/>}
+                                </div>
                                 <div className="foods-item-info">
                                     <div>
-                                        {data.name.en &&<div>{data.name.en}</div>}
+                                    {lang==="ar" || lang==="ku" ?
+                                        <div>{data.name.ar}</div>
+                                    :
+                                        <div>{data.name.en}</div>
+                                    }
                                         {data.price && <div>{parseInt(data.price).toLocaleString()}</div>}
                                     </div>
                                     <div>
-                                        {data.description.en && <span>{data.description.en}</span>}
+                                        {lang==="ar" || lang==="ku" ?
+                                            <span>{data.description.ar}</span>
+                                        :
+                                            <span>{data.description.en}</span>
+                                        }
                                     </div>
                                 </div>
                             </div>

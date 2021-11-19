@@ -17,6 +17,7 @@ const Food=()=>{
     const foods=useSelector(state=>state.Reducer.foods);
     const cartData=useSelector(state=>state.Reducer.cartData);
     const cart=useSelector(state=>state.Reducer.cart);
+    const lang=useSelector(state=>state.Reducer.lang);
     const [data , setData]=useState(null);
     const [inSize , setInSize]=useState(null);
     const [hello , setHello]=useState(true);
@@ -103,14 +104,28 @@ const Food=()=>{
                     className="category-back-btn" 
                     alt="back button" 
                 />
-                <div className="food-first-row">
-                    <div>{data && parseInt(data.price).toLocaleString()}</div>
-                    <div>{data && data.name.en}</div>
-                </div>
-                <div className="food-second-row">
-                    <div>
-                        <span>{data && data.description.en}</span>
+                {data &&
+                    <div className="food-first-row">
+                        <div>{parseInt(data.price).toLocaleString()}</div>
+                        <div>
+                            {lang==="ar" || lang==="ku" ?
+                                data.name.ar
+                            :
+                                data.name.en
+                            }
+                        </div>
                     </div>
+                }
+                <div className="food-second-row">
+                    {data &&
+                        <div>
+                            {lang==="ar" || lang==="ku" ?
+                                <span>{data.description.ar}</span>
+                            :
+                                <span>{data.description.en}</span>
+                            }
+                        </div>
+                    }
                 </div>
                 <div className="food-third-row">
                     <div>
@@ -120,7 +135,13 @@ const Food=()=>{
                         <Radio.Group onChange={(e)=>changeRadio(e)}>
                             {data.extras && data.extras.length!==0 &&
                                 data.extras.map((ex)=>(
-                                    <Radio value={ex.id}>{ex.name.en}</Radio>
+                                    <Radio value={ex.id}>
+                                        {lang==="ar" || lang==="ku" ?
+                                            ex.name.ar
+                                        :
+                                            ex.name.en
+                                        }
+                                    </Radio>
                                 ))
                             }
                         </Radio.Group>
@@ -128,7 +149,12 @@ const Food=()=>{
                 </div>
                 <div className="food-fourth-row">
                     <Button onClick={addToCart}>
-                        اًضف اٍلی الطلب
+                            {lang==="ar" || lang==="ku" ?
+                                "اًضف اٍلی الطلب"
+
+                            :
+                                "Add to cart"
+                            }
                     </Button>
                 </div>
                 </>

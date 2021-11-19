@@ -195,6 +195,6 @@
   width: 30px;
   margin-left: 15px;
 }
-@media only screen and (max-width:450px) {
-  
+.ant-spin-dot-item{
+  background-color: white !important;
 }
