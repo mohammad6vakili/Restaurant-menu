@@ -4,7 +4,7 @@ import Logo from "../../assets/images/logo.png";
 import iraqImage from "../../assets/images/Iraq.png";
 import kurdistanImage from "../../assets/images/kurdistan.png";
 import { useDispatch } from 'react-redux';
-import {setRes,setLang} from "../../Store/Action";
+import {setRes,setLang, setCartData, setCart} from "../../Store/Action";
 import usImage from "../../assets/images/us.png";
 import { useHistory } from 'react-router';
 import { Button, Select , Spin , message} from 'antd';
@@ -38,6 +38,10 @@ const Login=()=>{
         getRes();
         dispatch(setLang("ar"));
     },[])
+
+    useEffect(()=>{
+        dispatch(setCartData([]));
+    },[res])
 
     return(
         <div className="login">

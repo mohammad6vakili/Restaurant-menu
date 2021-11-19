@@ -36,7 +36,8 @@
 }
 .category-item {
   width: 22%;
-  height: 260px;
+  max-width: 270px;
+  height: 240px;
   cursor: pointer;
   border-radius: 30px;
   border: 1px solid rgba(255, 255, 255, 0.7);

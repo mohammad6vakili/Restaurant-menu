@@ -15,6 +15,7 @@ const Foods=()=>{
     const cat=useSelector(state=>state.Reducer.cat);
     const res=useSelector(state=>state.Reducer.res);
     const lang=useSelector(state=>state.Reducer.lang);
+    const catName=useSelector(state=>state.Reducer.catName);
     const [foodsData , setFoodsData]=useState(null);
     
     const getFoods=async()=>{
@@ -57,6 +58,9 @@ const Foods=()=>{
                 src={Logo} 
                 alt="logo" 
             />
+            {catName &&
+                <div style={{fontSize:"26px",color:"white",marginTop:"20px"}}>{catName}</div>
+            }
             <div className="foods-items">
                 {foodsData===null ? <Spin style={{position:"absolute",left:"49%",top:"49%"}} size="large" />
                 :

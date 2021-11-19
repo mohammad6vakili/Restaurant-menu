@@ -6,7 +6,8 @@ CART_DATA,
 RES,
 CAT,
 FOODS,
-LANG
+LANG,
+CAT_NAME
 } from "./Action";
   
   const initialState = {
@@ -17,7 +18,8 @@ LANG
     res:null,
     cat:null,
     foods:null,
-    lang:"ar"
+    lang:"ar",
+    catName:null
   };
   
   const Reducer = (state = initialState, action) => {
@@ -38,6 +40,8 @@ LANG
         return {...state , foods: action.payload};
       case LANG:
         return {...state , lang: action.payload};
+      case CAT_NAME:
+        return {...state , catName: action.payload};
       default:
         return state;
     }

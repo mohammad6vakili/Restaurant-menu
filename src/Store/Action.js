@@ -6,6 +6,7 @@ export const RES="RES";
 export const CAT="CAT";
 export const FOODS="FOODS";
 export const LANG="LANG";
+export const CAT_NAME="CAT_NAME";
 
 
 export const setFoodsData=(data)=>{
@@ -68,6 +69,14 @@ export const setLang=(data)=>{
     return(
         {
             type:LANG,
+            payload:data
+        }
+    )
+}
+export const setCatName=(data)=>{
+    return(
+        {
+            type:CAT_NAME,
             payload:data
         }
     )

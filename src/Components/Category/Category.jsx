@@ -2,7 +2,7 @@ import React, { useEffect , useState} from 'react';
 import "./Category.css";
 import { useDispatch , useSelector} from 'react-redux';
 import { useHistory } from 'react-router';
-import { setFoodsData,setCat } from '../../Store/Action';
+import { setFoodsData,setCat,setCatName } from '../../Store/Action';
 import Slider from "react-slick";
 import sliderImage from "../../assets/images/Smash-Freshers-Header-Banner copy.png";
 import sliderBackBtn from "../../assets/images/63-631354_drop-down-menu-down-arrow-html-hd-png copy 2.png";
@@ -60,6 +60,11 @@ const Category=()=>{
 
     const goToFood=(data)=>{
         dispatch(setCat(data.id));
+        if(lang==="en"){
+            dispatch(setCatName(data.name.en));
+        }else{
+            dispatch(setCatName(data.name.ar));
+        }
         history.push("/foods");
     }
 
@@ -82,7 +87,7 @@ const Category=()=>{
                         <img src={data.imageShow} key={data.id} alt="slider" />
                     ))
                 :
-                    <div></div>
+                    <Spin size="large" />
                 }
                 </Slider>
                 <img 
