@@ -22,6 +22,11 @@ const Category=()=>{
     const res=useSelector(state=>state.Reducer.res);
     const lang=useSelector(state=>state.Reducer.lang);
 
+    const goToFoodWithSlider=(data)=>{
+        dispatch(setCat(data.category_id));
+        history.push("/foods");
+    }
+
     const getCat=async()=>{
         try{
             const response=await axios.post("https://admin.btob-restaurant.com/api/v3/categories",
@@ -84,7 +89,7 @@ const Category=()=>{
                 <Slider {...bannerSettings}>
                 {slider !==null ?
                     slider.map((data)=>(
-                        <img src={data.imageShow} key={data.id} alt="slider" />
+                        <img onClick={()=>goToFoodWithSlider(data)} src={data.imageShow} key={data.id} alt="slider" />
                     ))
                 :
                     <Spin size="large" />

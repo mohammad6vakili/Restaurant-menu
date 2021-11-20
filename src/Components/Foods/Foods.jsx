@@ -27,6 +27,7 @@ const Foods=()=>{
             setFoodsData(response.data);
         }catch(err){
             console.log(err);
+            history.push("/category");
             message.error("Failed");
         }
     }

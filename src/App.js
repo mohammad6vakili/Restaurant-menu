@@ -22,6 +22,7 @@ const App=()=>{
   const history=useHistory();
   const dispatch=useDispatch();
   const [address , setAddress]=useState("");
+  const [mobile , setMobile]=useState("");
   const cartData=useSelector(state=>state.Reducer.cartData);
   const lang=useSelector(state=>state.Reducer.lang);
   const res=useSelector(state=>state.Reducer.res);
@@ -39,7 +40,9 @@ const App=()=>{
   
   const remove=(data)=>{
     dispatch(setCartData(
-      cartData.filter((cd)=>cd.id!==data.id)
+      cartData.filter(cd=>{
+       return cd.id!==data.id || cd.size!==data.size;
+      })
     ))
     data.count=0;
   }
@@ -47,7 +50,7 @@ const App=()=>{
   const increase=(data)=>{
       setHello(!hello);
       cartData.map((d)=>{
-        if(d.id===data.id){
+        if(d.id===data.id && d.size===data.size){
           return d.count==d.count++;
         }
       })
@@ -57,7 +60,8 @@ const App=()=>{
     if(data.count && data.count>1){
       setHello(!hello);
       cartData.map((d)=>{
-        if(d.id===data.id){
+        if(d.id===data.id && d.size===data.size){
+          console.log("mioo");
           return d.count==d.count--;
         }
       })  
@@ -71,6 +75,7 @@ const App=()=>{
     const postData={};
     postData.restaurant=res;
     postData.address=address;
+    postData.mobile=mobile;
     postData.items=cartData.map((cd)=>{
       if(cd.size===null){
         return {id:cd.id,qty:cd.count,extrasSelected:null}
@@ -83,14 +88,13 @@ const App=()=>{
       if(response.status===200){        
         message.success(response.data.message);
         dispatch(setCart(false));
-        window.location.replace(response.data.paymentLink);
+        // window.location.replace(response.data.paymentLink);
       }
     }catch(err){
       console.log(err);
       message.error("Failed");
     }
   }
-  
 
   useEffect(()=>{
     dispatch(setCartData(cartData));
@@ -100,6 +104,12 @@ const App=()=>{
   useEffect(()=>{
     dispatch(setCartData(cartData));
   },[hello])
+
+  useEffect(()=>{
+    if(location!=="/"){
+      history.push("/");
+    }
+  },[])
   
   return (
     <div className="App">
@@ -131,9 +141,16 @@ const App=()=>{
             {cartData && cartData.map((cd)=>(
               <div className="cart-item">
                 <div>
-                  <div>{cd.name.en} {cd.extras.map((ex)=>{
+                  <div>
+                    {lang==="en"?
+                      cd.name.en
+                      :
+                      cd.name.ar
+                    } 
+                     - 
+                    {cd.extras.map((ex)=>{
                     if(ex.id===cd.size){
-                      return " - " + ex.name.en
+                      return lang==="en"? ex.name.en : ex.name.ar
                     }
                   })}</div>
                   <div>
@@ -162,6 +179,7 @@ const App=()=>{
             </div>
             <Input
               type="tel"
+              onChange={(e)=>setMobile(e.target.value)}
               className="cart-input"
               placeholder={lang==="ar" || lang==="ku"?
               "رقم الهاتف"

@@ -47,6 +47,11 @@ const Food=()=>{
     }
 
     const changeRadio=(e)=>{
+        data.extras.map((ex)=>{
+            if(e.target.value===ex.id){
+                data.price=ex.price;
+            }
+        })
         setInSize(e.target.value);
     }
 
@@ -65,12 +70,21 @@ const Food=()=>{
         console.log(inSize);
         data.size=inSize;
         let alreadyExists=false;
-        cartData.map((x) => {
-            if (x.size === inSize) {
-              alreadyExists = true;
-              x.count++;
-            }
-        });
+        if(inSize!==null){
+            cartData.map((x) => {
+                if (x.size === inSize) {
+                  alreadyExists = true;
+                  x.count++;
+                }
+            });
+        }else{
+            cartData.map((x) => {
+                if (x.id === data.id) {
+                  alreadyExists = true;
+                  x.count++;
+                }
+            });
+        }
         if(!data.size){
             data.size=null;  
         }
@@ -78,7 +92,7 @@ const Food=()=>{
             data.count=1
             cartData.push(data);
             cartHandler();
-            history.push("/foods")
+            history.push("/foods");
             console.log("cartData.length===0");
         }else if(cartData.length>0){
             if(!alreadyExists){
