@@ -73,19 +73,15 @@ const Foods=()=>{
                                 </div>
                                 <div className="foods-item-info">
                                     <div>
-                                    {lang==="ar" || lang==="ku" ?
-                                        <div>{data.name.ar}</div>
-                                    :
-                                        <div>{data.name.en}</div>
-                                    }
+                                    {lang==="ar" &&<div>{data.name.ar}</div>}
+                                    {lang==="en" &&<div>{data.name.en}</div>}
+                                    {lang==="ku" &&<div>{data.name.fa}</div>}
                                         {data.price && <div>{parseInt(data.price).toLocaleString()}</div>}
                                     </div>
                                     <div>
-                                        {lang==="ar" || lang==="ku" ?
-                                            <span>{data.description.ar}</span>
-                                        :
-                                            <span>{data.description.en}</span>
-                                        }
+                                        {lang==="ar" &&<span>{data.description.ar}</span>}
+                                        {lang==="en" &&<span>{data.description.en}</span>}
+                                        {lang==="ku" &&<span>{data.description.fa}</span>}
                                     </div>
                                 </div>
                             </div>

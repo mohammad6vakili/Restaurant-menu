@@ -108,11 +108,9 @@ const Category=()=>{
                         <div key={data.id} onClick={()=>goToFood(data)} className="category-item">
                             <img src={data.imageShow} alt="food" />
                             <div>
-                                {lang==="ar" || lang==="ku" ?
-                                    data.name.ar
-                                :
-                                    data.name.en
-                                }
+                                {lang==="ar" && data.name.ar}
+                                {lang==="en" && data.name.en}
+                                {lang==="ku" && data.name.fa}
                             </div>
                         </div>
                     ))

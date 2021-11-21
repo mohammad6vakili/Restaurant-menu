@@ -129,12 +129,10 @@ const App=()=>{
       >
         <div className="cart-main">
           <div className="cart-title">
-            <span>
-              {lang==="ar" || lang==="ku"?
-              "اطلب"
-              :
-              "Order"
-              }
+            <span onClick={()=>console.log(cartData)}>
+              {lang==="ar" && "اطلب"}
+              {lang==="en" && "Order"}
+              {lang==="ku" && "سفارش"}
             </span>
           </div>
           <div className="cart-items">
@@ -142,15 +140,19 @@ const App=()=>{
               <div className="cart-item">
                 <div>
                   <div>
-                    {lang==="en"?
-                      cd.name.en
-                      :
-                      cd.name.ar
-                    } 
+                  {lang==="ar" && cd.name.ar}
+                  {lang==="en" && cd.name.en}
+                  {lang==="ku" && cd.name.fa}
                      - 
                     {cd.extras.map((ex)=>{
                     if(ex.id===cd.size){
-                      return lang==="en"? ex.name.en : ex.name.ar
+                      if(lang==="ar"){
+                        return ex.name.ar
+                      }else if(lang==="en"){
+                        return ex.name.en
+                      }else if(lang==="ku"){
+                        return ex.name.fa
+                      }
                     }
                   })}</div>
                   <div>
@@ -171,20 +173,19 @@ const App=()=>{
               </div>
             ))}
             <div style={{marginTop:"25px",fontSize:"18px",textAlign:"right"}}>
-              {lang==="ar" || lang==="ku"?
-              "المجموع"
-              :
-              "Total"
-              } : {cartData.reduce((a, c) => a + c.price * c.count, 0).toLocaleString()}
+              {lang==="ar" && "المجموع"}
+              {lang==="en" && "Total"}
+              {lang==="ku" && "مجموع"}
+              : {cartData.reduce((a, c) => a + c.price * c.count, 0).toLocaleString()}
             </div>
             <Input
               type="tel"
               onChange={(e)=>setMobile(e.target.value)}
               className="cart-input"
-              placeholder={lang==="ar" || lang==="ku"?
-              "رقم الهاتف"
-              :
-              "Telephone Number"
+              placeholder={
+                lang==="ar" && "رقم الهاتف",
+                lang==="en" && "Telephone Number",
+                lang==="ku" && "شماره تلفن"
               }
             />
             <Input
@@ -192,10 +193,10 @@ const App=()=>{
               value={address}
               onChange={(e)=>setAddress(e.target.value)}
               className="cart-input"
-              placeholder={lang==="ar" || lang==="ku"?
-              "العنوان"
-              :
-              "Address"
+              placeholder={
+                lang==="ar" && "العنوان",
+                lang==="en" && "Address",
+                lang==="ku" && "آدرس"
               }
             />
             <Button 
@@ -206,11 +207,9 @@ const App=()=>{
             >
               <img src={whatsapp} alt="call" />
               <span>
-              {lang==="ar" || lang==="ku"?
-              "اطلب عبر واتس اٍب"
-              :
-              "Order via WhatsApp"
-              }
+              {lang==="ar" && "اطلب عبر واتس اٍب"}
+              {lang==="en" && "Order via WhatsApp"}
+              {lang==="ku" && "سفارش از طریق واتساپ"}
               </span>
             </Button>
           </div>

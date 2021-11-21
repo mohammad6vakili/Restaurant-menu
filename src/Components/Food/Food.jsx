@@ -19,6 +19,7 @@ const Food=()=>{
     const cart=useSelector(state=>state.Reducer.cart);
     const lang=useSelector(state=>state.Reducer.lang);
     const [data , setData]=useState(null);
+    const [newPrice , setNewPrice]=useState(null);
     const [inSize , setInSize]=useState(null);
     const [hello , setHello]=useState(true);
 
@@ -49,12 +50,17 @@ const Food=()=>{
     const changeRadio=(e)=>{
         data.extras.map((ex)=>{
             if(e.target.value===ex.id){
-                data.price=ex.price;
+                setNewPrice(data.price+ex.price);
             }
         })
         setInSize(e.target.value);
     }
 
+    useEffect(()=>{
+        if(data){
+            setNewPrice(data.price);
+        }
+    },[data])
 
     useEffect(()=>{
         if(foods===null){
@@ -67,8 +73,9 @@ const Food=()=>{
 
 
     const addToCart=()=>{
-        console.log(inSize);
-        data.size=inSize;
+        let cpData=data;
+        cpData.price=newPrice;
+        cpData.size=inSize;
         let alreadyExists=false;
         if(inSize!==null){
             cartData.map((x) => {
@@ -79,27 +86,27 @@ const Food=()=>{
             });
         }else{
             cartData.map((x) => {
-                if (x.id === data.id) {
+                if (x.id === cpData.id) {
                   alreadyExists = true;
                   x.count++;
                 }
             });
         }
-        if(!data.size){
-            data.size=null;  
+        if(!cpData.size){
+            cpData.size=null;
         }
         if(cartData.length===0){
-            data.count=1
-            cartData.push(data);
+            cpData.count=1
+            cartData.push(cpData);
             cartHandler();
             history.push("/foods");
             console.log("cartData.length===0");
         }else if(cartData.length>0){
             if(!alreadyExists){
                 console.log("alreadyExist===false");
-                data.count=1
+                cpData.count=1
                 history.push("foods");
-                cartData.push(data);
+                cartData.push(cpData);
                 cartHandler();
             }else{
                 cartHandler();
@@ -122,22 +129,18 @@ const Food=()=>{
                     <div className="food-first-row">
                         <div>{parseInt(data.price).toLocaleString()}</div>
                         <div>
-                            {lang==="ar" || lang==="ku" ?
-                                data.name.ar
-                            :
-                                data.name.en
-                            }
+                            {lang==="ar" && data.name.ar}
+                            {lang==="en" && data.name.en}
+                            {lang==="ku" && data.name.fa}
                         </div>
                     </div>
                 }
                 <div className="food-second-row">
                     {data &&
                         <div>
-                            {lang==="ar" || lang==="ku" ?
-                                <span>{data.description.ar}</span>
-                            :
-                                <span>{data.description.en}</span>
-                            }
+                            {lang==="ar" && <span>{data.description.ar}</span>}
+                            {lang==="en" && <span>{data.description.en}</span>}
+                            {lang==="ku" && <span>{data.description.fa}</span>}
                         </div>
                     }
                 </div>
@@ -150,11 +153,9 @@ const Food=()=>{
                             {data.extras && data.extras.length!==0 &&
                                 data.extras.map((ex)=>(
                                     <Radio value={ex.id}>
-                                        {lang==="ar" || lang==="ku" ?
-                                            ex.name.ar
-                                        :
-                                            ex.name.en
-                                        }
+                                        {lang==="ar" && ex.name.ar}
+                                        {lang==="en" && ex.name.en}
+                                        {lang==="ku" && ex.name.fa}
                                     </Radio>
                                 ))
                             }
@@ -163,12 +164,9 @@ const Food=()=>{
                 </div>
                 <div className="food-fourth-row">
                     <Button onClick={addToCart}>
-                            {lang==="ar" || lang==="ku" ?
-                                "اًضف اٍلی الطلب"
-
-                            :
-                                "Add to cart"
-                            }
+                            {lang==="ar" && "اًضف اٍلی الطلب"}
+                            {lang==="en" && "Add to cart"}
+                            {lang==="ku" && "افزودن به سبد خرید"}
                     </Button>
                 </div>
                 </>
