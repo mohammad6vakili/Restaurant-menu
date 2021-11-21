@@ -88,7 +88,7 @@ const App=()=>{
       if(response.status===200){        
         message.success(response.data.message);
         dispatch(setCart(false));
-        // window.location.replace(response.data.paymentLink);
+        window.location.replace(response.data.paymentLink);
       }
     }catch(err){
       console.log(err);
