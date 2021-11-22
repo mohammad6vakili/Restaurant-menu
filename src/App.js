@@ -61,7 +61,6 @@ const App=()=>{
       setHello(!hello);
       cartData.map((d)=>{
         if(d.id===data.id && d.size===data.size){
-          console.log("mioo");
           return d.count==d.count--;
         }
       })  
@@ -143,15 +142,14 @@ const App=()=>{
                   {lang==="ar" && cd.name.ar}
                   {lang==="en" && cd.name.en}
                   {lang==="ku" && cd.name.fa}
-                     - 
                     {cd.extras.map((ex)=>{
                     if(ex.id===cd.size){
                       if(lang==="ar"){
-                        return ex.name.ar
+                        return " - " + ex.name.ar
                       }else if(lang==="en"){
-                        return ex.name.en
+                        return " - " + ex.name.en
                       }else if(lang==="ku"){
-                        return ex.name.fa
+                        return " - " + ex.name.fa
                       }
                     }
                   })}</div>

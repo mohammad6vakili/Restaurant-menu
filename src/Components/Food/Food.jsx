@@ -22,6 +22,7 @@ const Food=()=>{
     const [newPrice , setNewPrice]=useState(null);
     const [inSize , setInSize]=useState(null);
     const [hello , setHello]=useState(true);
+    const [already , setAlready]=useState(false);
 
     const getFood=async()=>{
         try{
@@ -39,11 +40,10 @@ const Food=()=>{
       if(cart===true){
         dispatch(setCart(false));
         setInSize(null);
+        checker();
       }else{
         dispatch(setCart(true));
-        // dispatch(setCartData(
-        //   cartData && cartData.filter((v,i,a)=>a.findIndex(t=>(t.id === v.id))===i)
-        // ))
+        checker();
       }
     }
 
@@ -54,13 +54,76 @@ const Food=()=>{
             }
         })
         setInSize(e.target.value);
+        data.size=e.target.value;
+        checker();
+    }
+
+    const checker=()=>{
+        console.log("checker");
+        if(data){
+            cartData.map((x)=>{
+                if(x.size===inSize){
+                    setAlready(true);
+                    setHello("x.size===inSize");
+                }
+                if(x.id===data.id){
+                    setAlready(true);
+                    setHello("x.id===data.id");
+                }
+                if(x.id!==data.id){
+                    setAlready(false);
+                    setHello("x.id!==data.id");
+                }
+                if(x.size!==inSize){
+                    setAlready(false);
+                    setHello("x.size!==inSize");
+                }
+            })
+        }
+    }
+
+    const addToCart=()=>{
+        checker();
+        let cpData=null;
+        cpData=data;
+        cpData.price=newPrice;
+        checker();
+        if(cartData.length===0){
+            cpData.count=1
+            cartData.push(cpData);
+            cartHandler();
+            console.log("cartData.length===0");
+            checker();
+            cpData=data;
+        }else{
+            if(already===true){
+                cpData.count=cpData.count+1;
+                cartHandler();
+                console.log("true");
+                checker();
+                cpData=data;
+            }else{
+                console.log("false");
+                cpData.count=1;
+                cartData.push(cpData);
+                cartHandler();
+                checker();
+                cpData=data;
+            }
+        }
     }
 
     useEffect(()=>{
         if(data){
             setNewPrice(data.price);
+            data.size=null;
+            checker();
         }
     },[data])
+
+    useEffect(()=>{
+        checker();
+    },[inSize])
 
     useEffect(()=>{
         if(foods===null){
@@ -69,54 +132,12 @@ const Food=()=>{
             getFood();
         }
         window.scrollTo(0, 0);
+        checker();
     },[])
-
-
-    const addToCart=()=>{
-        let cpData=data;
-        cpData.price=newPrice;
-        cpData.size=inSize;
-        let alreadyExists=false;
-        if(inSize!==null){
-            cartData.map((x) => {
-                if (x.size === inSize) {
-                  alreadyExists = true;
-                  x.count++;
-                }
-            });
-        }else{
-            cartData.map((x) => {
-                if (x.id === cpData.id) {
-                  alreadyExists = true;
-                  x.count++;
-                }
-            });
-        }
-        if(!cpData.size){
-            cpData.size=null;
-        }
-        if(cartData.length===0){
-            cpData.count=1
-            cartData.push(cpData);
-            cartHandler();
-            history.push("/foods");
-            console.log("cartData.length===0");
-        }else if(cartData.length>0){
-            if(!alreadyExists){
-                console.log("alreadyExist===false");
-                cpData.count=1
-                history.push("foods");
-                cartData.push(cpData);
-                cartHandler();
-            }else{
-                cartHandler();
-                console.log("alreadyExist===true");
-            }
-        }
-    }
     
     return(
             <div className="food">
+                <div onClick={()=>console.log(already , data , hello)}>checker</div>
                 {data===null ? <Spin style={{position:"absolute",left:"49%",top:"49%"}} size="large" /> :
                 <>
                 <img 
@@ -152,7 +173,7 @@ const Food=()=>{
                         <Radio.Group onChange={(e)=>changeRadio(e)}>
                             {data.extras && data.extras.length!==0 &&
                                 data.extras.map((ex)=>(
-                                    <Radio value={ex.id}>
+                                    <Radio onClick={checker} value={ex.id}>
                                         {lang==="ar" && ex.name.ar}
                                         {lang==="en" && ex.name.en}
                                         {lang==="ku" && ex.name.fa}
