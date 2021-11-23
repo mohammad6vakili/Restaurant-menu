@@ -36,7 +36,13 @@ const Food=()=>{
             message.error("Failed");
         }
     }
-    
+
+    const backToFoods=()=>{
+        setData(null);
+        setCpData(null);
+        history.push("/foods");
+    }
+
     const cartHandler=()=>{
       if(cart===true){
         dispatch(setCart(false));
@@ -48,6 +54,7 @@ const Food=()=>{
     }
 
     const changeRadio=(e)=>{
+        setHello(!hello);
         data.extras.map((ex)=>{
             if(e.target.value===ex.id){
                 setNewPrice(data.price+ex.price);
@@ -58,24 +65,26 @@ const Food=()=>{
     }
 
     const checker=()=>{
-        console.log("checker");
-        if(data){
+        if(cpData && cpData.hasOwnProperty("size")===false){
+            cpData.size=null;
+        }
+        if(data && cpData){
             cartData.map((x)=>{
                 if(x.size===cpData.size){
                     setAlready(true);
-                    setHello("x.size===cpData.size");
+                    console.log("x.size===cpData.size");
                 }
-                if(x.id===data.id){
+                if(x.id===cpData.id){
                     setAlready(true);
-                    setHello("x.id===data.id");
+                    console.log("x.id===data.id");
                 }
-                if(x.id!==data.id){
+                if(x.id!==cpData.id){
                     setAlready(false);
-                    setHello("x.id!==data.id");
+                    console.log("x.id!==data.id");
                 }
                 if(x.size!==cpData.size){
                     setAlready(false);
-                    setHello("x.size!==cpData.size");
+                    console.log("x.size!==cpData.size");
                 }
             })
         }
@@ -83,30 +92,31 @@ const Food=()=>{
 
     const addToCart=()=>{
         checker();
-        // let cpData=data;
-        // cpData.size=inSize;
         cpData.price=newPrice;
         checker();
         if(cartData.length===0){
-            // cpData.count=1
             cartData.push({...cpData,count:1});
             cartHandler();
-            console.log("cartData.length===0");
+            console.log("first time");
             checker();
         }else{
             if(already===true){
-                cpData.count=cpData.count+1;
+                cartData.map((x)=>{
+                    if(x.id===cpData.id && x.size===cpData.size){
+                        x.count++;
+                    }
+                })
                 cartHandler();
-                console.log("true");
                 checker();
             }else{
-                console.log("false");
-                // cpData.count=1;
                 cartData.push({...cpData,count:1});
                 cartHandler();
                 checker();
             }
         }
+        dispatch(setCartData(
+            cartData.filter((v,i,a)=>a.findIndex(t=>(t.size === v.size && t.id===v.id))===i)
+        ))
     }
 
     useEffect(()=>{
@@ -116,6 +126,11 @@ const Food=()=>{
         }
     },[data])
 
+    useEffect(()=>{
+        if(data){
+            checker();
+        }
+    },[hello])
 
     useEffect(()=>{
         if(foods===null){
@@ -129,13 +144,11 @@ const Food=()=>{
     
     return(
             <div className="food">
-                <div onClick={()=>console.log(data)}>data</div>
-                <div onClick={()=>console.log(cpData)}>cpData</div>
                 {data===null ? <Spin style={{position:"absolute",left:"49%",top:"49%"}} size="large" /> :
                 <>
                 <img 
-                    onClick={()=>history.push("/foods")}
-                    src={sliderBackBtn} 
+                    onClick={backToFoods}
+                    src={sliderBackBtn}
                     className="category-back-btn" 
                     alt="back button" 
                 />

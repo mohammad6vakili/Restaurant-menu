@@ -28,7 +28,6 @@ const App=()=>{
   const res=useSelector(state=>state.Reducer.res);
   const cart=useSelector(state=>state.Reducer.cart);
   const [hello , setHello]=useState(true);
-
   
   const cartHandler=()=>{
     if(cart===true){
