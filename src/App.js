@@ -161,9 +161,9 @@ const App=()=>{
                     <span style={{fontSize:"16px"}}>{parseInt(cd.price).toLocaleString()} * {cd.count}</span>
                   </div>
                 </div>
-                <div>
+                <div style={{display:"flex",justifyContent:"flex-end"}}>
                   <img 
-                    style={{width:"100%",borderRadius:"20px 0 0 20px",height:"100%"}} 
+                    style={{width:"98px",borderRadius:"20px 0 0 20px",height:"100%"}} 
                     src={cd.icon} 
                   />
                 </div>

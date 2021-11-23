@@ -51,7 +51,12 @@ const Login=()=>{
             <div>
                 <Select
                     style={{border:"1px solid #BEBEBE",borderRadius:"30px"}}
-                    defaultValue={"Arabic"}
+                    defaultValue={
+                        <>
+                        <img style={{width:"30px",position:"absolute",left:"2px"}} src={iraqImage} alt="Arabic" />
+                        <span>Arabic</span>
+                        </>
+                    }
                     onChange={(value)=>dispatch(setLang(value))}
                     className="login-select"
                 >
