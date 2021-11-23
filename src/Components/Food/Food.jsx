@@ -153,7 +153,6 @@ const Food=()=>{
     
     return(
             <div className="food">
-                <div>{msg}</div>
                 {data===null ? <Spin style={{position:"absolute",left:"49%",top:"49%"}} size="large" /> :
                 <>
                 <img 
