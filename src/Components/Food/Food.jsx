@@ -20,8 +20,8 @@ const Food=()=>{
     const lang=useSelector(state=>state.Reducer.lang);
     const [data , setData]=useState(null);
     const [newPrice , setNewPrice]=useState(null);
-    const [inSize , setInSize]=useState(null);
     const [hello , setHello]=useState(true);
+    const [cpData , setCpData]=useState(null);
     const [already , setAlready]=useState(false);
 
     const getFood=async()=>{
@@ -30,6 +30,7 @@ const Food=()=>{
                 food:foods
             });
             setData(response.data);
+            setCpData(response.data);
         }catch(err){
             console.log(err);
             message.error("Failed");
@@ -39,7 +40,6 @@ const Food=()=>{
     const cartHandler=()=>{
       if(cart===true){
         dispatch(setCart(false));
-        setInSize(null);
         checker();
       }else{
         dispatch(setCart(true));
@@ -53,8 +53,7 @@ const Food=()=>{
                 setNewPrice(data.price+ex.price);
             }
         })
-        setInSize(e.target.value);
-        data.size=e.target.value;
+        setCpData({...cpData , size:e.target.value});
         checker();
     }
 
@@ -62,9 +61,9 @@ const Food=()=>{
         console.log("checker");
         if(data){
             cartData.map((x)=>{
-                if(x.size===inSize){
+                if(x.size===cpData.size){
                     setAlready(true);
-                    setHello("x.size===inSize");
+                    setHello("x.size===cpData.size");
                 }
                 if(x.id===data.id){
                     setAlready(true);
@@ -74,9 +73,9 @@ const Food=()=>{
                     setAlready(false);
                     setHello("x.id!==data.id");
                 }
-                if(x.size!==inSize){
+                if(x.size!==cpData.size){
                     setAlready(false);
-                    setHello("x.size!==inSize");
+                    setHello("x.size!==cpData.size");
                 }
             })
         }
@@ -84,31 +83,28 @@ const Food=()=>{
 
     const addToCart=()=>{
         checker();
-        let cpData=null;
-        cpData=data;
+        // let cpData=data;
+        // cpData.size=inSize;
         cpData.price=newPrice;
         checker();
         if(cartData.length===0){
-            cpData.count=1
-            cartData.push(cpData);
+            // cpData.count=1
+            cartData.push({...cpData,count:1});
             cartHandler();
             console.log("cartData.length===0");
             checker();
-            cpData=data;
         }else{
             if(already===true){
                 cpData.count=cpData.count+1;
                 cartHandler();
                 console.log("true");
                 checker();
-                cpData=data;
             }else{
                 console.log("false");
-                cpData.count=1;
-                cartData.push(cpData);
+                // cpData.count=1;
+                cartData.push({...cpData,count:1});
                 cartHandler();
                 checker();
-                cpData=data;
             }
         }
     }
@@ -116,14 +112,10 @@ const Food=()=>{
     useEffect(()=>{
         if(data){
             setNewPrice(data.price);
-            data.size=null;
             checker();
         }
     },[data])
 
-    useEffect(()=>{
-        checker();
-    },[inSize])
 
     useEffect(()=>{
         if(foods===null){
@@ -137,7 +129,8 @@ const Food=()=>{
     
     return(
             <div className="food">
-                <div onClick={()=>console.log(already , data , hello)}>checker</div>
+                <div onClick={()=>console.log(data)}>data</div>
+                <div onClick={()=>console.log(cpData)}>cpData</div>
                 {data===null ? <Spin style={{position:"absolute",left:"49%",top:"49%"}} size="large" /> :
                 <>
                 <img 
