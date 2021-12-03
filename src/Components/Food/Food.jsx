@@ -163,7 +163,7 @@ const Food=()=>{
                 />
                 {data &&
                     <div className="food-first-row">
-                        <div>{parseInt(data.price).toLocaleString()}</div>
+                        <div>{ newPrice ? parseInt(newPrice).toLocaleString() :parseInt(data.price).toLocaleString()}</div>
                         <div>
                             {lang==="ar" && data.name.ar}
                             {lang==="en" && data.name.en}

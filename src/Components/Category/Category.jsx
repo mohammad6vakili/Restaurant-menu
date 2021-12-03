@@ -22,11 +22,6 @@ const Category=()=>{
     const res=useSelector(state=>state.Reducer.res);
     const lang=useSelector(state=>state.Reducer.lang);
 
-    const goToFoodWithSlider=(data)=>{
-        dispatch(setCat(data.category_id));
-        history.push("/foods");
-    }
-
     const getCat=async()=>{
         try{
             const response=await axios.post("https://admin.btob-restaurant.com/api/v3/categories",
@@ -67,10 +62,24 @@ const Category=()=>{
         dispatch(setCat(data.id));
         if(lang==="en"){
             dispatch(setCatName(data.name.en));
-        }else{
+        }else if(lang==="ar"){
             dispatch(setCatName(data.name.ar));
+        }else if(lang==="ku"){
+            dispatch(setCatName(data.name.fa));
         }
         history.push("/foods");
+    }
+
+    const goToFoodWithSlider=(data)=>{
+        dispatch(setCat(data.category_id));
+        history.push("/foods");
+        if(lang==="en"){
+            dispatch(setCatName(data.category.name.en));
+        }else if(lang==="ar"){
+            dispatch(setCatName(data.category.name.ar));
+        }else if(lang==="ku"){
+            dispatch(setCatName(data.category.name.fa));
+        }
     }
 
     const bannerSettings = {
