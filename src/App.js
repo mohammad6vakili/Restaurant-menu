@@ -176,25 +176,11 @@ const App=()=>{
               : {cartData.reduce((a, c) => a + c.price * c.count, 0).toLocaleString()}
             </div>
             <Input
-              type="tel"
-              onChange={(e)=>setMobile(e.target.value)}
-              className="cart-input"
-              placeholder={
-                lang==="ar" && "رقم الهاتف",
-                lang==="en" && "Telephone Number",
-                lang==="ku" && "شماره تلفن"
-              }
-            />
-            <Input
               type="text"
               value={address}
               onChange={(e)=>setAddress(e.target.value)}
               className="cart-input"
-              placeholder={
-                lang==="ar" && "العنوان",
-                lang==="en" && "Address",
-                lang==="ku" && "آدرس"
-              }
+              placeholder="note"
             />
             <Button 
               disabled={address.length===0}
