@@ -184,7 +184,7 @@ const Food=()=>{
                     <div>
                         <img src={data.icon} alt="food" />
                     </div>
-                    <div>
+                    <div style={{justifyContent:"flex-end"}}>
                         <Radio.Group onChange={(e)=>changeRadio(e)}>
                             {data.extras && data.extras.length!==0 &&
                                 data.extras.map((ex)=>(

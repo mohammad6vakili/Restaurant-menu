@@ -183,8 +183,6 @@ const App=()=>{
               placeholder="note"
             />
             <Button 
-              disabled={address.length===0}
-              style={address==="" ? {opacity:".5"} : {opacity:"1"}} 
               className="cart-button"
               onClick={saveOrder}
             >
