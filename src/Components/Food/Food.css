@@ -8,7 +8,7 @@
   padding: 0 20px;
   justify-content: space-between;
   align-items: center;
-  font-size: 32px;
+  font-size: 28px;
 }
 .food-first-row > div:nth-child(2) {
   justify-content: flex-end;
@@ -30,17 +30,15 @@
   direction: rtl;
   justify-content: flex-start;
   margin-top: 40px;
-  font-size: 24px;
+  font-size: 22px;
 }
 .food-second-row > div {
-  width: 100%;
+  width: 100% ;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding:0 20px;
-}
-.food-second-row > div:nth-child(1) {
-  min-width: 590px !important;
+  word-wrap: break-word;
 }
 .food-third-row {
   width: 100%;

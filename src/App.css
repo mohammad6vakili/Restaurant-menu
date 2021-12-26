@@ -2,11 +2,14 @@
   font-family: Almarai;
   src: url(/src/assets/font/Almarai-Regular.ttf);
 }
+@font-face {
+  font-family: speda;
+  src: url(/src/assets/font/Speda.ttf);
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Almarai;
 }
 .App {
   width: 100%;
@@ -16,6 +19,10 @@
   background-repeat: no-repeat;
   position: relative;
   overflow: hidden;
+  font-family: Almarai;
+}
+.app-ku{
+  font-family:speda !important;
 }
 .cart-icon {
   position: fixed;

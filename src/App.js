@@ -28,6 +28,7 @@ const App=()=>{
   const res=useSelector(state=>state.Reducer.res);
   const cart=useSelector(state=>state.Reducer.cart);
   const [hello , setHello]=useState(true);
+  const [isKu , setIsKu]=useState(false);
   
   const cartHandler=()=>{
     if(cart===true){
@@ -104,13 +105,21 @@ const App=()=>{
   },[hello])
 
   useEffect(()=>{
+    if(lang==="ku"){
+      setIsKu(true);
+    }else{
+      setIsKu(false);
+    }
+  },[lang])
+
+  useEffect(()=>{
     if(location!=="/"){
       history.push("/");
     }
   },[])
   
   return (
-    <div className="App">
+    <div className={`${isKu===true && "app-ku"} App`}>
       {cart === false && location.pathname!=="/" &&
         <div onClick={cartHandler} className="cart-icon">
           <img src={cartImage} alt="cart" />
@@ -130,7 +139,7 @@ const App=()=>{
             <span onClick={()=>console.log(cartData)}>
               {lang==="ar" && "اطلب"}
               {lang==="en" && "Order"}
-              {lang==="ku" && "سفارش"}
+              {lang==="ku" && "داواکردن"}
             </span>
           </div>
           <div className="cart-items">
@@ -172,7 +181,7 @@ const App=()=>{
             <div style={{marginTop:"25px",fontSize:"18px",textAlign:"right"}}>
               {lang==="ar" && "المجموع"}
               {lang==="en" && "Total"}
-              {lang==="ku" && "مجموع"}
+              {lang==="ku" && "کۆی گشتی"}
               : {cartData.reduce((a, c) => a + c.price * c.count, 0).toLocaleString()}
             </div>
             <Input
@@ -190,7 +199,7 @@ const App=()=>{
               <span>
               {lang==="ar" && "اطلب عبر واتس اٍب"}
               {lang==="en" && "Order via WhatsApp"}
-              {lang==="ku" && "سفارش از طریق واتساپ"}
+              {lang==="ku" && "داواکردن لەڕێی واتساپ"}
               </span>
             </Button>
           </div>

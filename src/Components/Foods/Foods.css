@@ -71,7 +71,7 @@
   display: flex;
   align-items: center;
   padding: 0 20px;
-  font-size: 28px;
+  font-size: 22px;
   scrollbar-width: none !important;
 }
 .foods-item-info > div:nth-child(1)::-webkit-scrollbar,
